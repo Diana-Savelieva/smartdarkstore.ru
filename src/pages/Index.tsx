@@ -27,13 +27,13 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
-                  className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
+                  className="px-8 py-5 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-14"
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="px-8 py-4 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all"
+                  className="px-8 py-5 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-14"
                 >
                   Назначить zoom-звонок
                 </Button>
@@ -42,7 +42,7 @@ const Index = () => {
             
             <div className="relative">
               <img 
-                src="/lovable-uploads/103494cb-e777-4a15-aed3-b98a63fa38ed.png" 
+                src="/lovable-uploads/ba385fed-2ec1-4416-af76-35c5c9cd7360.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
@@ -56,16 +56,16 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
+              <div className="text-5xl font-bold text-blue-600 mb-2">200%</div>
+              <p className="text-gray-600">рост производительности</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-blue-600 mb-2">99%</div>
+              <p className="text-gray-600">точность сборки</p>
+            </div>
+            <div className="text-center">
               <div className="text-5xl font-bold text-blue-600 mb-2">до 70%</div>
-              <p className="text-gray-600">сокращение маршрутов при параллельной сборке заказа</p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">200+</div>
-              <p className="text-gray-600">кв.м оптимизированных площадей</p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">6+</div>
-              <p className="text-gray-600">позиций в заказе для максимальной эффективности</p>
+              <p className="text-gray-600">сокращение маршрутов при параллельной сборке заказов</p>
             </div>
           </div>
         </div>
@@ -242,24 +242,27 @@ const Index = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input 
                   placeholder="Ваше имя" 
-                  className="border-gray-300"
+                  className="border-gray-300 h-12"
                 />
                 <Input 
                   placeholder="Телефон" 
-                  className="border-gray-300"
+                  className="border-gray-300 h-12"
                 />
               </div>
               <Input 
                 placeholder="Email" 
                 type="email"
-                className="border-gray-300"
+                className="border-gray-300 h-12"
               />
               <Textarea 
                 placeholder="Расскажите о вашем проекте"
                 className="border-gray-300 min-h-[120px]"
               />
+              <p className="text-sm text-gray-500 mb-4">
+                Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
+              </p>
               <Button 
-                className="w-full py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
+                className="w-full py-5 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-14"
               >
                 Получить консультацию
               </Button>
