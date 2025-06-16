@@ -13,6 +13,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header with Logo */}
+      <header className="absolute top-0 left-0 z-10 p-6">
+        <img 
+          src="/lovable-uploads/b101bd80-d4d3-4fc8-ba54-ee748327aa9c.png" 
+          alt="СМАРТ ДАРКСТОР" 
+          className="h-12 w-auto"
+        />
+      </header>
+
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-6">
@@ -40,11 +49,12 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative flex justify-center">
               <img 
                 src="/lovable-uploads/ba385fed-2ec1-4416-af76-35c5c9cd7360.png" 
                 alt="Интерфейс системы управления заказами" 
-                className="w-full h-auto rounded-lg shadow-2xl"
+                className="w-3/4 h-auto rounded-lg shadow-2xl"
+                style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
               />
             </div>
           </div>
@@ -225,39 +235,76 @@ const Index = () => {
                 3
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Сбор обратной связи</h3>
-              <p className="text-gray-600">Обратная связь от клиента поступает через таск-трекер, электронную почту или мессенджеры. Все обращения фиксируются и систематизируются, после чего ответственный специалист оперативно анализирует запрос. По результатам обработки клиент получает детальный ответ и, при необходимости, регулярные обновления о ходе выполнения.</p>
+              <p className="text-gray-600">Обратная связь от клиента поступает через таск-трекер, электронную почту или мессенджеры. Все обращения фиксируются и систематизируются, после чего специалист анализирует запрос. По результатам обработки клиент получает детальный ответ.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Section - Ready to Start */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Готовы начать?</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Оставьте заявку и наш специалист свяжется с вами для консультации и демонстрации системы
+          </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Получить консультацию</h2>
-            <p className="text-xl text-gray-600 mb-8">Оставьте заявку и наш специалист свяжется с вами в течение 30 минут</p>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Получить консультацию</h2>
+            </div>
             
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input 
-                  placeholder="Ваше имя" 
-                  className="border-gray-300 h-12"
-                />
-                <Input 
-                  placeholder="Телефон" 
-                  className="border-gray-300 h-12"
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Имя *</label>
+                  <Input 
+                    id="name"
+                    placeholder="Ваше имя" 
+                    className="border-gray-300 h-12"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                  <Input 
+                    id="email"
+                    placeholder="email@company.com" 
+                    type="email"
+                    className="border-gray-300 h-12"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Телефон *</label>
+                  <Input 
+                    id="phone"
+                    placeholder="+7 (999) 123-45-67" 
+                    className="border-gray-300 h-12"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">Компания</label>
+                  <Input 
+                    id="company"
+                    placeholder="Название компании" 
+                    className="border-gray-300 h-12"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Сообщение</label>
+                <Textarea 
+                  id="message"
+                  placeholder="Расскажите о ваших потребностях и задачах..."
+                  className="border-gray-300 min-h-[120px]"
                 />
               </div>
-              <Input 
-                placeholder="Email" 
-                type="email"
-                className="border-gray-300 h-12"
-              />
-              <Textarea 
-                placeholder="Расскажите о вашем проекте"
-                className="border-gray-300 min-h-[120px]"
-              />
               <p className="text-sm text-gray-500 mb-4">
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
@@ -272,13 +319,20 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gradient-to-br from-blue-500 to-cyan-500 text-white">
+      <footer className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">СМАРТ ДАРКСТОР</h3>
-            <div className="space-y-2">
-              <p className="text-white/90">info@smartdarkstore.ru</p>
-              <p className="text-white/90">+7 (495) 255-3978</p>
+            <h3 className="text-3xl font-bold mb-4">СМАРТ ДАРКСТОР</h3>
+            <p className="text-xl text-white/90 mb-8">Система управления заказами нового поколения</p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+              <div className="flex items-center gap-2">
+                <span className="text-white/90">📧</span>
+                <span className="text-white/90">info@smartdarkstore.ru</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-white/90">📞</span>
+                <span className="text-white/90">+7 (495) 255-3978</span>
+              </div>
             </div>
           </div>
         </div>
