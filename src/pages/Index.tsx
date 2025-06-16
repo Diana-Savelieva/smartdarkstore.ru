@@ -14,35 +14,39 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20 z-10"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')"
-          }}
-        ></div>
-        
-        <div className="container mx-auto px-6 relative z-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Революционное решение для управления заказами и сборочным процессом
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Автоматизируйте сборочные процессы, повысьте эффективность и оптимизируйте работу торговой точки с помощью интеллектуальной системы управления
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={scrollToForm}
-              className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
-            >
-              Оставить заявку
-            </Button>
-            <Button 
-              variant="outline" 
-              className="px-8 py-4 text-lg border-2 border-white bg-white/10 backdrop-blur-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-white/20 transition-all"
-            >
-              Назначить zoom-звонок
-            </Button>
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Революционное решение для управления заказами и сборочным процессом
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                Автоматизируйте сборочные процессы, повысьте эффективность и оптимизируйте работу торговой точки с помощью интеллектуальной системы управления
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={scrollToForm}
+                  className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
+                >
+                  Оставить заявку
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="px-8 py-4 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all"
+                >
+                  Назначить zoom-звонок
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/103494cb-e777-4a15-aed3-b98a63fa38ed.png" 
+                alt="Интерфейс системы управления заказами" 
+                className="w-full h-auto rounded-lg shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -228,31 +232,31 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form" className="py-20 bg-gradient-to-br from-blue-400 to-cyan-400">
+      <section id="contact-form" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">Получить консультацию</h2>
-            <p className="text-xl text-white/90 mb-8">Оставьте заявку и наш специалист свяжется с вами в течение 30 минут</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Получить консультацию</h2>
+            <p className="text-xl text-gray-600 mb-8">Оставьте заявку и наш специалист свяжется с вами в течение 30 минут</p>
             
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input 
                   placeholder="Ваше имя" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70 backdrop-blur-sm"
+                  className="border-gray-300"
                 />
                 <Input 
                   placeholder="Телефон" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70 backdrop-blur-sm"
+                  className="border-gray-300"
                 />
               </div>
               <Input 
                 placeholder="Email" 
                 type="email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/70 backdrop-blur-sm"
+                className="border-gray-300"
               />
               <Textarea 
                 placeholder="Расскажите о вашем проекте"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/70 backdrop-blur-sm min-h-[120px]"
+                className="border-gray-300 min-h-[120px]"
               />
               <Button 
                 className="w-full py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
