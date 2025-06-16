@@ -14,11 +14,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Logo */}
-      <header className="absolute top-0 left-0 z-10 p-6">
+      <header className="absolute top-6 left-8 z-10">
         <img 
           src="/lovable-uploads/b101bd80-d4d3-4fc8-ba54-ee748327aa9c.png" 
           alt="СМАРТ ДАРКСТОР" 
-          className="h-12 w-auto"
+          className="h-16 w-auto"
         />
       </header>
 
@@ -36,13 +36,13 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
-                  className="px-8 py-5 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-14"
+                  className="px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[60px]"
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="px-8 py-5 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-14"
+                  className="px-8 py-6 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[60px]"
                 >
                   Назначить zoom-звонок
                 </Button>
@@ -51,7 +51,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/ba385fed-2ec1-4416-af76-35c5c9cd7360.png" 
+                src="/lovable-uploads/fe2d49a6-8b76-423a-a51f-bc3c2109c66f.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-3/4 h-auto rounded-lg shadow-2xl"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
@@ -242,7 +242,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section - Ready to Start */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Готовы начать?</h2>
           <p className="text-xl text-gray-600 mb-8">
@@ -252,7 +252,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form" className="py-20 bg-white">
+      <section id="contact-form" className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
@@ -266,7 +266,7 @@ const Index = () => {
                   <Input 
                     id="name"
                     placeholder="Ваше имя" 
-                    className="border-gray-300 h-12"
+                    className="border-gray-300 h-[52px]"
                   />
                 </div>
                 <div>
@@ -275,7 +275,7 @@ const Index = () => {
                     id="email"
                     placeholder="email@company.com" 
                     type="email"
-                    className="border-gray-300 h-12"
+                    className="border-gray-300 h-[52px]"
                   />
                 </div>
               </div>
@@ -285,7 +285,7 @@ const Index = () => {
                   <Input 
                     id="phone"
                     placeholder="+7 (999) 123-45-67" 
-                    className="border-gray-300 h-12"
+                    className="border-gray-300 h-[52px]"
                   />
                 </div>
                 <div>
@@ -293,7 +293,7 @@ const Index = () => {
                   <Input 
                     id="company"
                     placeholder="Название компании" 
-                    className="border-gray-300 h-12"
+                    className="border-gray-300 h-[52px]"
                   />
                 </div>
               </div>
@@ -309,7 +309,7 @@ const Index = () => {
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
               <Button 
-                className="w-full py-5 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-14"
+                className="w-full py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[60px]"
               >
                 Получить консультацию
               </Button>
