@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,11 +13,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Logo */}
-      <header className="absolute top-6 left-6 z-10">
+      <header className="absolute top-6 z-10" style={{ left: '3.5cm' }}>
         <img 
           src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
           alt="СМАРТ ДАРКСТОР" 
-          className="h-12 w-auto"
+          className="h-14 w-auto"
         />
       </header>
 
@@ -27,7 +26,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl font-normal text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 Решение для управления заказами и сборочным процессом
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -36,13 +35,13 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
-                  className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[52px]"
+                  className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[48px]"
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[52px]"
+                  className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[48px]"
                 >
                   Назначить видео-звонок
                 </Button>
@@ -51,7 +50,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/00b0c789-cd77-4972-b3c3-cbda6c336ee1.png" 
+                src="/lovable-uploads/cd8da3cf-23af-48ba-a1b1-02fca5f42faa.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-full max-w-2xl h-auto"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
@@ -66,15 +65,15 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-5xl font-normal text-blue-600 mb-2">200%</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">200%</div>
               <p className="text-gray-600">рост производительности</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-normal text-blue-600 mb-2">99%</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">99%</div>
               <p className="text-gray-600">точность сборки</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-normal text-blue-600 mb-2">до 70%</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">до 70%</div>
               <p className="text-gray-600">сокращение маршрутов при параллельной сборке заказов</p>
             </div>
           </div>
@@ -85,7 +84,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-normal text-gray-900 mb-6">Ключевые возможности</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ключевые возможности</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Инновационный продукт для управления заказами, направленный на повышение эффективности процессов сборки заказов и оптимизацию работы торговых точек (склады, торговые залы, дарксторы)
             </p>
@@ -139,7 +138,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-normal text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -210,7 +209,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-normal text-gray-900 mb-6">Технологический процесс внедрения</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Технологический процесс внедрения</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -246,7 +245,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-normal text-gray-900 mb-4">Оставьте заявку</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Оставьте заявку</h2>
               <p className="text-xl text-gray-600">
                 Задайте вопрос о нашем продукте и решениях или пришлите информацию о вашем проекте.
               </p>
@@ -310,7 +309,7 @@ const Index = () => {
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
               <Button 
-                className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[52px]"
+                className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[48px]"
               >
                 Оставьте заявку
               </Button>
