@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Clock, Route, Users, Video, Zap, BarChart3, Package, Target, TrendingUp, Smartphone } from "lucide-react";
+import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone } from "lucide-react";
 
 const Index = () => {
   const scrollToForm = () => {
@@ -18,7 +18,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/b101bd80-d4d3-4fc8-ba54-ee748327aa9c.png" 
           alt="СМАРТ ДАРКСТОР" 
-          className="h-16 w-auto"
+          className="h-20 w-auto"
         />
       </header>
 
@@ -27,8 +27,8 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Революционное решение для управления заказами и сборочным процессом
+              <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+                Решение для управления заказами и сборочным процессом
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Автоматизируйте сборочные процессы, повысьте эффективность и оптимизируйте работу торговой точки с помощью интеллектуальной системы управления
@@ -36,22 +36,22 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
-                  className="px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[60px]"
+                  className="px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[78px]"
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="px-8 py-6 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[60px]"
+                  className="px-8 py-6 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[78px]"
                 >
-                  Назначить zoom-звонок
+                  Назначить видео-звонок
                 </Button>
               </div>
             </div>
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/fe2d49a6-8b76-423a-a51f-bc3c2109c66f.png" 
+                src="/lovable-uploads/00b0c789-cd77-4972-b3c3-cbda6c336ee1.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-3/4 h-auto rounded-lg shadow-2xl"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
@@ -85,7 +85,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ключевые возможности</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Ключевые возможности</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Инновационный продукт для управления заказами, направленный на повышение эффективности процессов сборки заказов и оптимизацию работы торговых точек (склады, торговые залы, дарксторы)
             </p>
@@ -95,20 +95,10 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="p-8 text-center h-full flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Clock className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Прогнозирование времени выполнения заказа</h3>
-                <p className="text-gray-600 flex-grow">Точный расчет времени сборки каждого заказа</p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-8 text-center h-full flex flex-col">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Route className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация маршрутов и порядка сборки товаров</h3>
-                <p className="text-gray-600 flex-grow">Минимизация перемещений сборщиков по торговой точке, сокращение маршрутов до 25-70%</p>
+                <p className="text-gray-600 flex-grow">Минимизация перемещений сборщиков по торговой точке, сокращение маршрутов до 70%</p>
               </CardContent>
             </Card>
 
@@ -131,6 +121,16 @@ const Index = () => {
                 <p className="text-gray-600 flex-grow">Контроль и мониторинг состояния полок и размещения товаров в торговом зале</p>
               </CardContent>
             </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardContent className="p-8 text-center h-full flex flex-col">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Прогнозирование времени выполнения заказа</h3>
+                <p className="text-gray-600 flex-grow">Точный расчет времени сборки каждого заказа</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -139,7 +139,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,7 +149,7 @@ const Index = () => {
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Сокращение маршрутов и параллельная сборка заказов</h3>
-                <p className="text-gray-600">Позволяет одновременно собирать несколько заказов с повышенной скоростью, сокращать маршруты сборки и снижать количество ошибок.</p>
+                <p className="text-gray-600">Оптимизация маршрутов сборки и снижение количества ошибок, а также возможность параллельно собирать несколько заказов, увеличивая производительность.</p>
               </CardContent>
             </Card>
 
@@ -159,7 +159,7 @@ const Index = () => {
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Аналитика популярности товаров с помощью тепловой карты</h3>
-                <p className="text-gray-600">Тепловая карта, на которой отображаются наиболее популярные и менее востребованные товары. На основании этих данных можно принимать обоснованные решения о перемещении продуктов на полках или стеллажах.</p>
+                <p className="text-gray-600">Тепловая карта, на которой отображаются наиболее популярные и менее востребованные товары. На основании этих данных можно принимать обоснованные решения о перемещении продуктов на полках или стеллажах, что поможет оптимизировать и ускорить процесс сборки товаров.</p>
               </CardContent>
             </Card>
 
@@ -176,7 +176,7 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Target className="w-8 h-8 text-white" />
+                  <Check className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Оценка эффективности расположения товаров</h3>
                 <p className="text-gray-600">Предоставляем недельную статистику для анализа эффективности размещения товаров.</p>
@@ -210,28 +210,28 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Технологический процесс внедрения</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Технологический процесс внедрения</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 1
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Разметка торгового пространства</h3>
-              <p className="text-gray-600">Производится точечная разметка торговой точки с фиксацией расположения полок и привязкой SKU к конкретным местам хранения на основании данных заказчика. Одновременно формируются возможные маршруты перемещения сборщиков.</p>
+              <p className="text-gray-600">Производится точечная разметка торговой точки с фиксацией расположения полок и привязкой SKU к конкретным местам хранения на основании предоставленного плана помещения. Одновременно формируются возможные маршруты перемещения сборщиков.</p>
             </div>
             
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 2
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация порядка сборки заказа</h3>
-              <p className="text-gray-600">Система переставляет позиции в заказе для минимизации общего пути сборщика, учитывая дополнительные параметры, например, сбор легких товаров в первую очередь, тяжелых последними.</p>
+              <p className="text-gray-600">Система переставляет позиции в заказе для минимизации общего пути сборщика, учитывая дополнительные параметры, например, сбор легких товаров в первую очередь, тяжелых последними, что сокращает время сборки заказа.</p>
             </div>
             
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 3
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Сбор обратной связи</h3>
@@ -241,22 +241,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Ready to Start */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Готовы начать?</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Оставьте заявку и наш специалист свяжется с вами для консультации и демонстрации системы
-          </p>
-        </div>
-      </section>
-
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Получить консультацию</h2>
+              <h2 className="text-4xl font-semibold text-gray-900 mb-4">Оставьте заявку</h2>
+              <p className="text-xl text-gray-600">
+                Задайте вопрос о нашем продукте и решениях или пришлите информацию о вашем проекте.
+              </p>
             </div>
             
             <form className="space-y-6">
@@ -298,6 +291,14 @@ const Index = () => {
                 </div>
               </div>
               <div>
+                <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-2">Должность</label>
+                <Input 
+                  id="position"
+                  placeholder="Ваша должность" 
+                  className="border-gray-300 h-[52px]"
+                />
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Сообщение</label>
                 <Textarea 
                   id="message"
@@ -309,7 +310,7 @@ const Index = () => {
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
               <Button 
-                className="w-full py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[60px]"
+                className="w-full py-6 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[78px]"
               >
                 Получить консультацию
               </Button>
