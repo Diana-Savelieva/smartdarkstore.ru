@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,11 +14,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Logo */}
-      <header className="absolute top-6 z-10" style={{ left: '3.5cm' }}>
+      <header className="absolute top-6 z-10" style={{ left: '4.5cm', marginBottom: '3mm' }}>
         <img 
           src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
           alt="СМАРТ ДАРКСТОР" 
-          className="h-14 w-auto"
+          className="h-16 w-auto"
         />
       </header>
 
@@ -35,13 +36,15 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
-                  className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[48px]"
+                  className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
+                  style={{ height: '44px' }}
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all h-[48px]"
+                  className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all"
+                  style={{ height: '44px' }}
                 >
                   Назначить видео-звонок
                 </Button>
@@ -50,7 +53,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/cd8da3cf-23af-48ba-a1b1-02fca5f42faa.png" 
+                src="/lovable-uploads/fe9a6acc-be80-4f3f-ba13-20d5bd14feb6.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-full max-w-2xl h-auto"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
@@ -84,7 +87,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ключевые возможности</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Ключевые возможности</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Инновационный продукт для управления заказами, направленный на повышение эффективности процессов сборки заказов и оптимизацию работы торговых точек (склады, торговые залы, дарксторы)
             </p>
@@ -96,7 +99,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Route className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Оптимизация маршрутов и порядка сборки товаров</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация маршрутов и порядка сборки товаров</h3>
                 <p className="text-gray-600 flex-grow">Минимизация перемещений сборщиков по торговой точке, сокращение маршрутов до 70%</p>
               </CardContent>
             </Card>
@@ -106,7 +109,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Прогнозирование загруженности торговой точки и сборщиков</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Прогнозирование загруженности торговой точки и сборщиков</h3>
                 <p className="text-gray-600 flex-grow">Учет загрузки торговой точки, «узких мест» маршрутов, эффективное распределение ресурсов и минимизация простоев</p>
               </CardContent>
             </Card>
@@ -116,7 +119,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Video className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Система управления торговой точкой на основе видеоаналитики</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Система управления торговой точкой на основе видеоаналитики</h3>
                 <p className="text-gray-600 flex-grow">Контроль и мониторинг состояния полок и размещения товаров в торговом зале</p>
               </CardContent>
             </Card>
@@ -126,7 +129,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Clock className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Прогнозирование времени выполнения заказа</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Прогнозирование времени выполнения заказа</h3>
                 <p className="text-gray-600 flex-grow">Точный расчет времени сборки каждого заказа</p>
               </CardContent>
             </Card>
@@ -138,7 +141,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -147,7 +150,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Сокращение маршрутов и параллельная сборка заказов</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Сокращение маршрутов и параллельная сборка заказов</h3>
                 <p className="text-gray-600">Оптимизация маршрутов сборки и снижение количества ошибок, а также возможность параллельно собирать несколько заказов, увеличивая производительность.</p>
               </CardContent>
             </Card>
@@ -157,7 +160,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Аналитика популярности товаров с помощью тепловой карты</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Аналитика популярности товаров с помощью тепловой карты</h3>
                 <p className="text-gray-600">Тепловая карта, на которой отображаются наиболее популярные и менее востребованные товары. На основании этих данных можно принимать обоснованные решения о перемещении продуктов на полках или стеллажах, что поможет оптимизировать и ускорить процесс сборки товаров.</p>
               </CardContent>
             </Card>
@@ -167,7 +170,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Package className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Оптимизация выкладки товаров</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация выкладки товаров</h3>
                 <p className="text-gray-600">Рекомендации по размещению товаров на основе популярности заказов и рекомендации по перемещению товаров, уровней полок и стеллажей для повышения эффективности.</p>
               </CardContent>
             </Card>
@@ -177,7 +180,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Check className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Оценка эффективности расположения товаров</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Оценка эффективности расположения товаров</h3>
                 <p className="text-gray-600">Предоставляем недельную статистику для анализа эффективности размещения товаров.</p>
               </CardContent>
             </Card>
@@ -187,7 +190,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Оптимизация времени сборки</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация времени сборки</h3>
                 <p className="text-gray-600">Существенное сокращение времени сборки заказов на площадях от 200 кв.м при наличии более шести позиций в заказе, повышая производительность персонала.</p>
               </CardContent>
             </Card>
@@ -197,7 +200,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Smartphone className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-normal text-gray-900 mb-4">Аппаратно-независимое решение</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Аппаратно-независимое решение</h3>
                 <p className="text-gray-600">Поддержка различных форм-факторов устройств (ТСД, тележки и др.) в зависимости от типа сборки. Интеграция с IT-системами ритейлера осуществляется через API, что обеспечивает оперативность и надежность обмена данными.</p>
               </CardContent>
             </Card>
@@ -209,7 +212,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Технологический процесс внедрения</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Технологический процесс внедрения</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -217,7 +220,7 @@ const Index = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 1
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-4">Разметка торгового пространства</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Разметка торгового пространства</h3>
               <p className="text-gray-600">Производится точечная разметка торговой точки с фиксацией расположения полок и привязкой SKU к конкретным местам хранения на основании предоставленного плана помещения. Одновременно формируются возможные маршруты перемещения сборщиков.</p>
             </div>
             
@@ -225,7 +228,7 @@ const Index = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 2
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-4">Оптимизация порядка сборки заказа</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация порядка сборки заказа</h3>
               <p className="text-gray-600">Система переставляет позиции в заказе для минимизации общего пути сборщика, учитывая дополнительные параметры, например, сбор легких товаров в первую очередь, тяжелых последними, что сокращает время сборки заказа.</p>
             </div>
             
@@ -233,7 +236,7 @@ const Index = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 3
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-4">Сбор обратной связи</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Сбор обратной связи</h3>
               <p className="text-gray-600">Обратная связь от клиента поступает через таск-трекер, электронную почту или мессенджеры. Все обращения фиксируются и систематизируются, после чего специалист анализирует запрос. По результатам обработки клиент получает детальный ответ.</p>
             </div>
           </div>
@@ -245,7 +248,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Оставьте заявку</h2>
+              <h2 className="text-4xl font-semibold text-gray-900 mb-4">Оставьте заявку</h2>
               <p className="text-xl text-gray-600">
                 Задайте вопрос о нашем продукте и решениях или пришлите информацию о вашем проекте.
               </p>
@@ -258,7 +261,8 @@ const Index = () => {
                   <Input 
                     id="name"
                     placeholder="Ваше имя" 
-                    className="border-gray-300 h-[52px]"
+                    className="border-gray-300"
+                    style={{ height: '48px' }}
                   />
                 </div>
                 <div>
@@ -267,7 +271,8 @@ const Index = () => {
                     id="email"
                     placeholder="email@company.com" 
                     type="email"
-                    className="border-gray-300 h-[52px]"
+                    className="border-gray-300"
+                    style={{ height: '48px' }}
                   />
                 </div>
               </div>
@@ -277,7 +282,8 @@ const Index = () => {
                   <Input 
                     id="phone"
                     placeholder="+7 (999) 123-45-67" 
-                    className="border-gray-300 h-[52px]"
+                    className="border-gray-300"
+                    style={{ height: '48px' }}
                   />
                 </div>
                 <div>
@@ -285,7 +291,8 @@ const Index = () => {
                   <Input 
                     id="company"
                     placeholder="Название компании" 
-                    className="border-gray-300 h-[52px]"
+                    className="border-gray-300"
+                    style={{ height: '48px' }}
                   />
                 </div>
               </div>
@@ -294,7 +301,8 @@ const Index = () => {
                 <Input 
                   id="position"
                   placeholder="Ваша должность" 
-                  className="border-gray-300 h-[52px]"
+                  className="border-gray-300"
+                  style={{ height: '48px' }}
                 />
               </div>
               <div>
@@ -309,7 +317,8 @@ const Index = () => {
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
               <Button 
-                className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105 h-[48px]"
+                className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
+                style={{ height: '44px' }}
               >
                 Оставьте заявку
               </Button>
