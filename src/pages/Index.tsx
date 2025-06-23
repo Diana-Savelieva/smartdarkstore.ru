@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,8 +15,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-6">
-          {/* Logo positioned at top left with 3cm offset to the right */}
-          <div className="absolute top-8" style={{ left: 'calc(1.5rem + 3cm)' }}>
+          {/* Logo positioned at top left with 4cm offset to the right */}
+          <div className="absolute top-8" style={{ left: 'calc(1.5rem + 4cm)' }}>
             <img 
               src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
               alt="СМАРТ ДАРКСТОР" 
@@ -351,4 +349,3 @@ const Index = () => {
 };
 
 export default Index;
-
