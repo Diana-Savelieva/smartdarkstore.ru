@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,8 +17,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-6">
-          {/* Logo positioned at top left */}
-          <div className="absolute top-8 left-6">
+          {/* Logo positioned at top left with 3cm offset to the right */}
+          <div className="absolute top-8" style={{ left: 'calc(1.5rem + 3cm)' }}>
             <img 
               src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
               alt="СМАРТ ДАРКСТОР" 
@@ -53,7 +54,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/8cdfdb52-05c0-4e07-ab8d-f275d6b6c75d.png" 
+                src="/lovable-uploads/fe9a6acc-be80-4f3f-ba13-20d5bd14feb6.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-full max-w-2xl h-auto"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
@@ -350,3 +351,4 @@ const Index = () => {
 };
 
 export default Index;
+
