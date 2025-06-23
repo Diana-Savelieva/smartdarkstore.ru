@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,11 +13,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Logo */}
-      <header className="absolute top-6 z-10" style={{ left: '5cm', marginBottom: '7mm' }}>
+      <header className="absolute top-6 z-10" style={{ left: '8.5cm', marginBottom: '7mm' }}>
         <img 
           src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
           alt="СМАРТ ДАРКСТОР" 
-          className="h-16 w-auto"
+          className="h-20 w-auto"
         />
       </header>
 
@@ -36,15 +35,15 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToForm}
+                  size="lg"
                   className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
-                  style={{ height: '47mm' }}
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
+                  size="lg"
                   className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all"
-                  style={{ height: '47mm' }}
                 >
                   Назначить видео-звонок
                 </Button>
@@ -261,8 +260,7 @@ const Index = () => {
                   <Input 
                     id="name"
                     placeholder="Ваше имя" 
-                    className="border-gray-300"
-                    style={{ height: '51mm' }}
+                    className="border-gray-300 h-12"
                   />
                 </div>
                 <div>
@@ -271,8 +269,7 @@ const Index = () => {
                     id="email"
                     placeholder="email@company.com" 
                     type="email"
-                    className="border-gray-300"
-                    style={{ height: '51mm' }}
+                    className="border-gray-300 h-12"
                   />
                 </div>
               </div>
@@ -282,8 +279,7 @@ const Index = () => {
                   <Input 
                     id="phone"
                     placeholder="+7 (999) 123-45-67" 
-                    className="border-gray-300"
-                    style={{ height: '51mm' }}
+                    className="border-gray-300 h-12"
                   />
                 </div>
                 <div>
@@ -291,8 +287,7 @@ const Index = () => {
                   <Input 
                     id="company"
                     placeholder="Название компании" 
-                    className="border-gray-300"
-                    style={{ height: '51mm' }}
+                    className="border-gray-300 h-12"
                   />
                 </div>
               </div>
@@ -301,8 +296,7 @@ const Index = () => {
                 <Input 
                   id="position"
                   placeholder="Ваша должность" 
-                  className="border-gray-300"
-                  style={{ height: '51mm' }}
+                  className="border-gray-300 h-12"
                 />
               </div>
               <div>
@@ -317,8 +311,8 @@ const Index = () => {
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
               </p>
               <Button 
+                size="lg"
                 className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
-                style={{ height: '47mm' }}
               >
                 Оставьте заявку
               </Button>
