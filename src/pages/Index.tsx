@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone } from "lucide-react";
+import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
 
 const Index = () => {
   const scrollToForm = () => {
@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Logo */}
-      <header className="absolute top-6 z-10" style={{ left: '4.5cm', marginBottom: '3mm' }}>
+      <header className="absolute top-6 z-10" style={{ left: '5cm', marginBottom: '7mm' }}>
         <img 
           src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
           alt="СМАРТ ДАРКСТОР" 
@@ -37,14 +37,14 @@ const Index = () => {
                 <Button 
                   onClick={scrollToForm}
                   className="px-8 py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
-                  style={{ height: '44px' }}
+                  style={{ height: '47mm' }}
                 >
                   Оставить заявку
                 </Button>
                 <Button 
                   variant="outline" 
                   className="px-8 py-3 text-lg border-2 border-blue-600 bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-blue-50 transition-all"
-                  style={{ height: '44px' }}
+                  style={{ height: '47mm' }}
                 >
                   Назначить видео-звонок
                 </Button>
@@ -87,7 +87,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Ключевые возможности</h2>
+            <h2 className="text-4xl font-medium text-gray-900 mb-6">Ключевые возможности</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Инновационный продукт для управления заказами, направленный на повышение эффективности процессов сборки заказов и оптимизацию работы торговых точек (склады, торговые залы, дарксторы)
             </p>
@@ -141,7 +141,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
+            <h2 className="text-4xl font-medium text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -212,12 +212,12 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-6">Технологический процесс внедрения</h2>
+            <h2 className="text-4xl font-medium text-gray-900 mb-6">Технологический процесс внедрения</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 1
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Разметка торгового пространства</h3>
@@ -225,7 +225,7 @@ const Index = () => {
             </div>
             
             <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 2
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Оптимизация порядка сборки заказа</h3>
@@ -233,7 +233,7 @@ const Index = () => {
             </div>
             
             <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 3
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Сбор обратной связи</h3>
@@ -248,7 +248,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-semibold text-gray-900 mb-4">Оставьте заявку</h2>
+              <h2 className="text-4xl font-medium text-gray-900 mb-4">Оставьте заявку</h2>
               <p className="text-xl text-gray-600">
                 Задайте вопрос о нашем продукте и решениях или пришлите информацию о вашем проекте.
               </p>
@@ -262,7 +262,7 @@ const Index = () => {
                     id="name"
                     placeholder="Ваше имя" 
                     className="border-gray-300"
-                    style={{ height: '48px' }}
+                    style={{ height: '51mm' }}
                   />
                 </div>
                 <div>
@@ -272,7 +272,7 @@ const Index = () => {
                     placeholder="email@company.com" 
                     type="email"
                     className="border-gray-300"
-                    style={{ height: '48px' }}
+                    style={{ height: '51mm' }}
                   />
                 </div>
               </div>
@@ -283,7 +283,7 @@ const Index = () => {
                     id="phone"
                     placeholder="+7 (999) 123-45-67" 
                     className="border-gray-300"
-                    style={{ height: '48px' }}
+                    style={{ height: '51mm' }}
                   />
                 </div>
                 <div>
@@ -292,7 +292,7 @@ const Index = () => {
                     id="company"
                     placeholder="Название компании" 
                     className="border-gray-300"
-                    style={{ height: '48px' }}
+                    style={{ height: '51mm' }}
                   />
                 </div>
               </div>
@@ -302,7 +302,7 @@ const Index = () => {
                   id="position"
                   placeholder="Ваша должность" 
                   className="border-gray-300"
-                  style={{ height: '48px' }}
+                  style={{ height: '51mm' }}
                 />
               </div>
               <div>
@@ -318,7 +318,7 @@ const Index = () => {
               </p>
               <Button 
                 className="w-full py-3 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg transform transition-all hover:scale-105"
-                style={{ height: '44px' }}
+                style={{ height: '47mm' }}
               >
                 Оставьте заявку
               </Button>
@@ -330,17 +330,21 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-6">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-4">СМАРТ ДАРКСТОР</h3>
-            <p className="text-xl text-white/90 mb-8">Система управления заказами нового поколения</p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-              <div className="flex items-center gap-2">
-                <span className="text-white/90">📧</span>
-                <span className="text-white/90">info@smartdarkstore.ru</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-3xl font-bold mb-4 text-white">Смарт даркстор</h3>
+              <p className="text-lg text-white/90 leading-relaxed">
+                Инновационная система управления складским пространством для максимальной эффективности вашего бизнеса.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 md:items-end">
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-white/90" />
+                <span className="text-lg text-white/90">+7 (495) 255-3978</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-white/90">📞</span>
-                <span className="text-white/90">+7 (495) 255-3978</span>
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-white/90" />
+                <span className="text-lg text-white/90">info@smartdarkstore.ru</span>
               </div>
             </div>
           </div>
