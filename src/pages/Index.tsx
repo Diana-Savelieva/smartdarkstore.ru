@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,19 +13,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header with Logo */}
-      <header className="absolute top-6 z-10" style={{ left: '8.5cm', marginBottom: '7mm' }}>
-        <img 
-          src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
-          alt="СМАРТ ДАРКСТОР" 
-          className="h-20 w-auto"
-        />
-      </header>
-
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Logo positioned at top left */}
+          <div className="absolute top-8 left-6">
+            <img 
+              src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
+              alt="СМАРТ ДАРКСТОР" 
+              className="h-16 w-auto"
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-16">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 Решение для управления заказами и сборочным процессом
@@ -52,7 +53,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <img 
-                src="/lovable-uploads/fe9a6acc-be80-4f3f-ba13-20d5bd14feb6.png" 
+                src="/lovable-uploads/8cdfdb52-05c0-4e07-ab8d-f275d6b6c75d.png" 
                 alt="Интерфейс системы управления заказами" 
                 className="w-full max-w-2xl h-auto"
                 style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
