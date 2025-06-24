@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
+import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail, Map } from "lucide-react";
 
 const Index = () => {
   const scrollToForm = () => {
@@ -136,8 +137,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Dashboard Section */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-medium text-gray-900 mb-6">Панель управления</h2>
+            <p className="text-xl text-gray-600 mb-12">Полный контроль над вашим складским пространством</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 mb-8">
+                <h3 className="text-2xl font-semibold text-blue-800 mb-2">Даркстор</h3>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-6">Возможности системы</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-700">Статистика эффективности решения</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-700">Аналитика сканирований продуктов</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-700">Перемещенные/мульти-расположенные товары</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-700">Рекомендации по перемещению уровней полок</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span className="text-gray-700">Рекомендации по перестановке стеллажей</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative flex justify-center">
+              <img 
+                src="/lovable-uploads/f894951b-7d88-47fd-91bc-3b60d1f2e3e7.png" 
+                alt="Карта расположения товаров" 
+                className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
+                style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-medium text-gray-900 mb-6">Преимущества в процессе сборки заказов</h2>
@@ -208,14 +262,14 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-medium text-gray-900 mb-6">Технологический процесс внедрения</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+            <div className="text-left group bg-gray-50 rounded-lg p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 1
               </div>
@@ -223,7 +277,7 @@ const Index = () => {
               <p className="text-gray-600">Производится точечная разметка торговой точки с фиксацией расположения полок и привязкой SKU к конкретным местам хранения на основании предоставленного плана помещения. Одновременно формируются возможные маршруты перемещения сборщиков.</p>
             </div>
             
-            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+            <div className="text-left group bg-gray-50 rounded-lg p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 2
               </div>
@@ -231,7 +285,7 @@ const Index = () => {
               <p className="text-gray-600">Система переставляет позиции в заказе для минимизации общего пути сборщика, учитывая дополнительные параметры, например, сбор легких товаров в первую очередь, тяжелых последними, что сокращает время сборки заказа.</p>
             </div>
             
-            <div className="text-left group bg-white/50 backdrop-blur-sm rounded-lg p-8">
+            <div className="text-left group bg-gray-50 rounded-lg p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                 3
               </div>
@@ -243,7 +297,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form" className="py-12 bg-white">
+      <section id="contact-form" className="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
@@ -328,7 +382,7 @@ const Index = () => {
             <div>
               <h3 className="text-3xl font-bold mb-4 text-white">Смарт даркстор</h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                Инновационная система управления складским пространством для максимальной эффективности вашего бизнеса.
+                Инновационный продукт для управления заказами, направленный на повышение эффективности процессов сборки заказов и оптимизацию работы торговых точек.
               </p>
             </div>
             <div className="flex flex-col gap-4 md:items-end">
