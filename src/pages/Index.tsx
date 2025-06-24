@@ -138,53 +138,59 @@ const Index = () => {
       </section>
 
       {/* Dashboard Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-medium text-gray-900 mb-6">Панель управления</h2>
             <p className="text-xl text-gray-600 mb-12">Полный контроль над вашим складским пространством</p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 mb-8">
-                <h3 className="text-2xl font-semibold text-blue-800 mb-2">Даркстор</h3>
+              <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 mb-8 shadow-xl">
+                <h3 className="text-3xl font-bold text-white mb-2 text-center">Даркстор</h3>
+                <div className="w-16 h-1 bg-white/30 mx-auto rounded-full"></div>
               </div>
               
-              <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-6">Возможности системы</h4>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">Статистика эффективности решения</span>
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-blue-100">
+                <h4 className="text-2xl font-semibold text-blue-800 mb-8 flex items-center gap-3">
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
+                  Возможности системы
+                </h4>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 text-lg leading-relaxed group-hover:text-blue-800 transition-colors">Статистика эффективности решения</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">Аналитика сканирований продуктов</span>
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 text-lg leading-relaxed group-hover:text-blue-800 transition-colors">Аналитика сканирований продуктов</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">Перемещенные/мульти-расположенные товары</span>
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 text-lg leading-relaxed group-hover:text-blue-800 transition-colors">Перемещенные/мульти-расположенные товары</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">Рекомендации по перемещению уровней полок</span>
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 text-lg leading-relaxed group-hover:text-blue-800 transition-colors">Рекомендации по перемещению уровней полок</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">Рекомендации по перестановке стеллажей</span>
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 text-lg leading-relaxed group-hover:text-blue-800 transition-colors">Рекомендации по перестановке стеллажей</span>
                   </div>
                 </div>
               </div>
             </div>
             
             <div className="relative flex justify-center">
-              <img 
-                src="/lovable-uploads/f894951b-7d88-47fd-91bc-3b60d1f2e3e7.png" 
-                alt="Карта расположения товаров" 
-                className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
-                style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.1))' }}
-              />
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <img 
+                  src="/lovable-uploads/f894951b-7d88-47fd-91bc-3b60d1f2e3e7.png" 
+                  alt="Карта расположения товаров" 
+                  className="relative w-full max-w-2xl h-auto rounded-2xl shadow-2xl border border-blue-200"
+                />
+              </div>
             </div>
           </div>
         </div>
