@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -137,9 +138,9 @@ const Index = () => {
       </section>
 
       {/* Dashboard Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-4xl font-medium text-gray-900 mb-6">Панель управления</h2>
             <p className="text-xl text-gray-600 mb-8">Полный контроль над вашим складским пространством</p>
           </div>
@@ -148,12 +149,11 @@ const Index = () => {
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 mb-6 shadow-xl">
                 <h3 className="text-2xl font-bold text-white mb-2 text-center">Даркстор</h3>
-                <div className="w-16 h-1 bg-white/30 mx-auto rounded-full mb-3"></div>
                 <p className="text-white/90 text-center font-medium">Возможности системы</p>
               </div>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
                     <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
                     <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors">Статистика эффективности решения</span>
