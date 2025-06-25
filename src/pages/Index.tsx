@@ -37,9 +37,9 @@ const Index = () => {
         body: JSON.stringify({
           ...data,
           _replyto: data.email,
-          _subject: 'Новая заявка с сайта Смарт Даркстор',
+          _subject: 'Заявка на Смарт даркстор',
           _email: {
-            to: 'info+nvgn@nvgn.ru'
+            to: 'info@navigine.com'
           }
         })
       });
