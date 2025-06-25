@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -68,35 +66,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header with Contact Info */}
-      <header className="bg-white shadow-sm border-b border-gray-100 hidden md:block">
-        <div className="container mx-auto px-6 py-3">
-          <div className="flex justify-end items-center gap-6">
-            <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">+7 (495) 255-3978</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-              <Mail className="w-4 h-4" />
-              <span className="text-sm font-medium">info@smartdarkstore.ru</span>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Logo positioned responsively */}
-          <div className="absolute top-4 md:top-8 left-4 md:left-auto" style={{ left: 'calc(1rem + 2cm)' }}>
-            <img 
-              src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
-              alt="СМАРТ ДАРКСТОР" 
-              className="h-12 md:h-16 w-auto"
-            />
+          {/* Logo and Contact Info positioned together */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 md:mb-12">
+            <div className="flex items-center mb-4 sm:mb-0">
+              <img 
+                src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
+                alt="СМАРТ ДАРКСТОР" 
+                className="h-12 md:h-16 w-auto"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm font-medium">+7 (495) 255-3978</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <Mail className="w-4 h-4" />
+                <span className="text-sm font-medium">info@smartdarkstore.ru</span>
+              </div>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center pt-16 md:pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Решение для управления заказами и сборочным процессом
@@ -218,6 +212,10 @@ const Index = () => {
               
               <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-blue-100">
                 <div className="space-y-3">
+                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
+                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
+                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Статистика эффективности решения</span>
+                  </div>
                   <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
                     <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
                     <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Аналитика сканирований продуктов</span>
@@ -476,4 +474,3 @@ const Index = () => {
 };
 
 export default Index;
-
