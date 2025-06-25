@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,21 +29,29 @@ const Index = () => {
       message: formData.get('message')
     };
 
+    console.log('Отправка данных формы:', data);
+
     try {
       const response = await fetch('https://formspree.io/f/xdkobpyj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
-          ...data,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          company: data.company,
+          position: data.position,
+          message: data.message,
           _replyto: data.email,
           _subject: 'Заявка на Смарт даркстор',
-          _email: {
-            to: 'info@navigine.com'
-          }
+          _to: 'info@navigine.com'
         })
       });
+
+      console.log('Ответ сервера:', response.status, response.statusText);
 
       if (response.ok) {
         toast({
@@ -51,9 +60,12 @@ const Index = () => {
         });
         (e.target as HTMLFormElement).reset();
       } else {
-        throw new Error('Ошибка отправки');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Ошибка отправки:', errorData);
+        throw new Error(`Ошибка отправки: ${response.status}`);
       }
     } catch (error) {
+      console.error('Ошибка при отправке формы:', error);
       toast({
         title: "Ошибка",
         description: "Не удалось отправить заявку. Попробуйте еще раз.",
@@ -67,10 +79,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-8 md:py-12 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      <section className="relative py-6 md:py-8 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           {/* Logo and Contact Info positioned together */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 md:mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-6">
             <div className="flex items-center mb-4 sm:mb-0">
               <img 
                 src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
