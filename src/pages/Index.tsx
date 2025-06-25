@@ -67,10 +67,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      <section className="relative py-8 md:py-12 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           {/* Logo and Contact Info positioned together */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 md:mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 md:mb-8">
             <div className="flex items-center mb-4 sm:mb-0">
               <img 
                 src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
