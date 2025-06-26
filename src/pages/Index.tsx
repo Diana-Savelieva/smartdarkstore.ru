@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Index = () => {
   const { toast } = useToast();
@@ -32,45 +34,51 @@ const Index = () => {
     console.log('Отправка данных формы:', data);
 
     try {
-      const response = await fetch('https://formspree.io/f/xdkobpyj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          company: data.company,
-          position: data.position,
-          message: data.message,
-          _replyto: data.email,
-          _subject: 'Заявка на Смарт даркстор',
-          _to: 'info@navigine.com'
-        })
-      });
+      // Инициализация EmailJS с публичным ключом
+      emailjs.init('YOUR_PUBLIC_KEY'); // Замените на ваш публичный ключ
 
-      console.log('Ответ сервера:', response.status, response.statusText);
+      const templateParams = {
+        to_email: 'info@navigine.com',
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        company: data.company || 'Не указана',
+        position: data.position || 'Не указана',
+        message: data.message || 'Сообщение не указано',
+        subject: 'Заявка на Смарт даркстор'
+      };
 
-      if (response.ok) {
-        toast({
-          title: "Заявка отправлена!",
-          description: "Мы свяжемся с вами в ближайшее время.",
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        console.error('Ошибка отправки:', errorData);
-        throw new Error(`Ошибка отправки: ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Ошибка при отправке формы:', error);
+      console.log('Отправка через EmailJS:', templateParams);
+
+      const response = await emailjs.send(
+        'YOUR_SERVICE_ID', // Замените на ваш Service ID
+        'YOUR_TEMPLATE_ID', // Замените на ваш Template ID
+        templateParams
+      );
+
+      console.log('Успешная отправка:', response);
+
       toast({
-        title: "Ошибка",
-        description: "Не удалось отправить заявку. Попробуйте еще раз.",
-        variant: "destructive",
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время.",
       });
+      
+      (e.target as HTMLFormElement).reset();
+      
+    } catch (error) {
+      console.error('Ошибка при отправке:', error);
+      
+      // В качестве резерва используем простой mailto
+      const mailtoLink = `mailto:info@navigine.com?subject=Заявка на Смарт даркстор&body=Имя: ${data.name}%0D%0AEmail: ${data.email}%0D%0AТелефон: ${data.phone}%0D%0AКомпания: ${data.company || 'Не указана'}%0D%0AДолжность: ${data.position || 'Не указана'}%0D%0AСообщение: ${data.message || 'Не указано'}`;
+      
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Заявка передана",
+        description: "Откроется почтовый клиент для отправки заявки.",
+      });
+      
+      (e.target as HTMLFormElement).reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -486,3 +494,4 @@ const Index = () => {
 };
 
 export default Index;
+
