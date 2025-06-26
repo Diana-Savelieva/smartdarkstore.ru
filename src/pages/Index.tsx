@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -35,7 +33,7 @@ const Index = () => {
 
     try {
       // Инициализация EmailJS с публичным ключом
-      emailjs.init('YOUR_PUBLIC_KEY'); // Замените на ваш публичный ключ
+      emailjs.init('ВСТАВЬТЕ_ВАШ_PUBLIC_KEY_СЮДА'); // Замените на ваш публичный ключ
 
       const templateParams = {
         to_email: 'info@navigine.com',
@@ -51,8 +49,8 @@ const Index = () => {
       console.log('Отправка через EmailJS:', templateParams);
 
       const response = await emailjs.send(
-        'YOUR_SERVICE_ID', // Замените на ваш Service ID
-        'YOUR_TEMPLATE_ID', // Замените на ваш Template ID
+        'ВСТАВЬТЕ_ВАШ_SERVICE_ID_СЮДА', // Замените на ваш Service ID
+        'ВСТАВЬТЕ_ВАШ_TEMPLATE_ID_СЮДА', // Замените на ваш Template ID
         templateParams
       );
 
@@ -494,4 +492,3 @@ const Index = () => {
 };
 
 export default Index;
-
