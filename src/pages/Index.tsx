@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const Index = () => {
   const { toast } = useToast();
@@ -24,59 +23,45 @@ const Index = () => {
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      company: formData.get('company'),
-      position: formData.get('position'),
-      message: formData.get('message')
+      company: formData.get('company') || 'Не указана',
+      position: formData.get('position') || 'Не указана',
+      message: formData.get('message') || 'Не указано'
     };
 
-    console.log('Отправка данных формы:', data);
+    // Формируем текст письма
+    const emailBody = `Заявка на Смарт даркстор
+
+Имя: ${data.name}
+Email: ${data.email}
+Телефон: ${data.phone}
+Компания: ${data.company}
+Должность: ${data.position}
+
+Сообщение:
+${data.message}`;
+
+    // Создаем mailto ссылку
+    const mailtoLink = `mailto:info@navigine.com?subject=${encodeURIComponent('Заявка на Смарт даркстор')}&body=${encodeURIComponent(emailBody)}`;
 
     try {
-      // Инициализация EmailJS с публичным ключом
-      emailjs.init('ВСТАВЬТЕ_ВАШ_PUBLIC_KEY_СЮДА'); // Замените на ваш публичный ключ
-
-      const templateParams = {
-        to_email: 'info@navigine.com',
-        from_name: data.name,
-        from_email: data.email,
-        phone: data.phone,
-        company: data.company || 'Не указана',
-        position: data.position || 'Не указана',
-        message: data.message || 'Сообщение не указано',
-        subject: 'Заявка на Смарт даркстор'
-      };
-
-      console.log('Отправка через EmailJS:', templateParams);
-
-      const response = await emailjs.send(
-        'ВСТАВЬТЕ_ВАШ_SERVICE_ID_СЮДА', // Замените на ваш Service ID
-        'ВСТАВЬТЕ_ВАШ_TEMPLATE_ID_СЮДА', // Замените на ваш Template ID
-        templateParams
-      );
-
-      console.log('Успешная отправка:', response);
-
+      // Открываем почтовый клиент
+      window.open(mailtoLink, '_blank');
+      
       toast({
-        title: "Заявка отправлена!",
-        description: "Мы свяжемся с вами в ближайшее время.",
+        title: "Заявка готова к отправке!",
+        description: "Откроется ваш почтовый клиент с готовым письмом.",
       });
       
+      // Очищаем форму
       (e.target as HTMLFormElement).reset();
       
     } catch (error) {
-      console.error('Ошибка при отправке:', error);
-      
-      // В качестве резерва используем простой mailto
-      const mailtoLink = `mailto:info@navigine.com?subject=Заявка на Смарт даркстор&body=Имя: ${data.name}%0D%0AEmail: ${data.email}%0D%0AТелефон: ${data.phone}%0D%0AКомпания: ${data.company || 'Не указана'}%0D%0AДолжность: ${data.position || 'Не указана'}%0D%0AСообщение: ${data.message || 'Не указано'}`;
-      
-      window.location.href = mailtoLink;
+      console.error('Ошибка при открытии почтового клиента:', error);
       
       toast({
-        title: "Заявка передана",
-        description: "Откроется почтовый клиент для отправки заявки.",
+        title: "Информация скопирована",
+        description: "Скопируйте информацию и отправьте на info@navigine.com вручную.",
       });
-      
-      (e.target as HTMLFormElement).reset();
     } finally {
       setIsSubmitting(false);
     }
