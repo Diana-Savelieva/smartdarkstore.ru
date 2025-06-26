@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -129,16 +130,16 @@ ${data.message}`;
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">200%</div>
-              <p className="text-gray-600 text-sm md:text-base">рост производительности</p>
-            </div>
-            <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">99%</div>
               <p className="text-gray-600 text-sm md:text-base">точность сборки</p>
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">до 70%</div>
               <p className="text-gray-600 text-sm md:text-base">сокращение маршрутов при параллельной сборке заказов</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">до 25%</div>
+              <p className="text-gray-600 text-sm md:text-base">сокращение маршрутов при заказах до 15 позиций</p>
             </div>
           </div>
         </div>
