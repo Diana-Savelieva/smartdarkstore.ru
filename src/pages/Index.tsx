@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -169,6 +168,16 @@ ${data.message}`;
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+                  <Video className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                </div>
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">Система управления торговой точкой на основе видеоаналитики</h3>
+                <p className="text-gray-600 flex-grow text-sm md:text-base">Контроль и мониторинг состояния полок, загроможденности проходов между стеллажами и размещения товаров в торговом зале</p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">Прогнозирование загруженности торговой точки и сборщиков</h3>
@@ -179,20 +188,10 @@ ${data.message}`;
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform">
-                  <Video className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">Система управления торговой точкой на основе видеоаналитики</h3>
-                <p className="text-gray-600 flex-grow text-sm md:text-base">Контроль и мониторинг состояния полок и размещения товаров в торговом зале</p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform">
                   <Clock className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">Прогнозирование времени выполнения заказа</h3>
-                <p className="text-gray-600 flex-grow text-sm md:text-base">Точный расчет времени сборки каждого заказа</p>
+                <p className="text-gray-600 flex-grow text-sm md:text-base">Максимально приближенный к точному расчет времени сборки каждого заказа</p>
               </CardContent>
             </Card>
           </div>
@@ -204,7 +203,7 @@ ${data.message}`;
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 md:mb-6">Панель управления</h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">Полный контроль над вашим складским пространством</p>
+            <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">Полный контроль над вашей торговой точкой</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
