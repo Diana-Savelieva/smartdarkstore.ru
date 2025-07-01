@@ -88,7 +88,7 @@ ${data.message}`;
               </div>
               <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
                 <Mail className="w-4 h-4" />
-                <span className="text-sm font-medium">info@smartdarkstore.ru</span>
+                <span className="text-sm font-medium">sasha@smartdarkstore.ru</span>
               </div>
             </div>
           </div>
@@ -466,7 +466,7 @@ ${data.message}`;
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-white/90" />
-                <span className="text-base md:text-lg text-white/90">info@smartdarkstore.ru</span>
+                <span className="text-base md:text-lg text-white/90">sasha@smartdarkstore.ru</span>
               </div>
             </div>
           </div>
