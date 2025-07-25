@@ -28,39 +28,34 @@ const Index = () => {
       message: formData.get('message') || 'Не указано'
     };
 
-    // Формируем текст письма
-    const emailBody = `Заявка на Смарт даркстор
-
-Имя: ${data.name}
-Email: ${data.email}
-Телефон: ${data.phone}
-Компания: ${data.company}
-Должность: ${data.position}
-
-Сообщение:
-${data.message}`;
-
-    // Создаем mailto ссылку
-    const mailtoLink = `mailto:info@navigine.com?subject=${encodeURIComponent('Заявка на Смарт даркстор')}&body=${encodeURIComponent(emailBody)}`;
-
     try {
-      // Открываем почтовый клиент
-      window.open(mailtoLink, '_blank');
-      
-      toast({
-        title: "Заявка готова к отправке!",
-        description: "Откроется ваш почтовый клиент с готовым письмом.",
+      const response = await fetch('https://mlmxbnjftdifeyjanyrz.supabase.co/functions/v1/dynamic-task', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
-      
-      // Очищаем форму
-      (e.target as HTMLFormElement).reset();
+
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
+        });
+        
+        // Очищаем форму
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Ошибка при отправке заявки');
+      }
       
     } catch (error) {
-      console.error('Ошибка при открытии почтового клиента:', error);
+      console.error('Ошибка при отправке заявки:', error);
       
       toast({
-        title: "Информация скопирована",
-        description: "Скопируйте информацию и отправьте на info@navigine.com вручную.",
+        title: "Ошибка отправки",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
