@@ -16,6 +16,7 @@ const Index = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log('Form submit handler called!'); // Debug log
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
