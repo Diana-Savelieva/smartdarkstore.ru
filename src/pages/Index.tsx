@@ -14,12 +14,23 @@ const Index = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("=== FORM SUBMIT START ===");
     e.preventDefault();
-    console.log('Form submit handler called!'); // Debug log
+    e.stopPropagation();
+    console.log("Form submit handler called! preventDefault() executed");
+    
+    // Дополнительная проверка на mailto
+    if (window.location.href.includes('mailto:')) {
+      console.error("DETECTED MAILTO IN URL - BLOCKING");
+      return false;
+    }
+    
     setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
@@ -28,39 +39,42 @@ const Index = () => {
       position: formData.get('position') || 'Не указана',
       message: formData.get('message') || 'Не указано'
     };
-
-    try {
-      const response = await fetch('https://mlmxbnjftdifeyjanyrz.supabase.co/functions/v1/dynamic-task', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
+    
+    console.log("Sending data via Supabase:", data);
+    
+    fetch('https://mlmxbnjftdifeyjanyrz.supabase.co/functions/v1/dynamic-task', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => {
+      console.log("Supabase response status:", response.status);
       if (response.ok) {
         toast({
           title: "Заявка отправлена!",
           description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
         });
-        
-        // Очищаем форму
-        (e.target as HTMLFormElement).reset();
+        form.reset();
       } else {
-        throw new Error('Ошибка при отправке заявки');
+        throw new Error('Ошибка отправки');
       }
-      
-    } catch (error) {
-      console.error('Ошибка при отправке заявки:', error);
-      
+    })
+    .catch(error => {
+      console.error("Supabase error:", error);
       toast({
         title: "Ошибка отправки",
-        description: "Не удалось отправить заявку. Попробуйте позже.",
+        description: "Попробуйте еще раз или свяжитесь с нами по телефону.",
         variant: "destructive",
       });
-    } finally {
+    })
+    .finally(() => {
       setIsSubmitting(false);
-    }
+      console.log("=== FORM SUBMIT END ===");
+    });
+    
+    return false;
   };
 
   return (
@@ -366,7 +380,14 @@ const Index = () => {
               </p>
             </div>
             
-            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} action="" method="post" data-form="contact-v2">
+            <form 
+              className="space-y-4 md:space-y-6" 
+              onSubmit={handleSubmit}
+              action="javascript:void(0)"
+              method="post" 
+              data-form="contact-v3"
+              data-no-mailto="true"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Имя *</label>
