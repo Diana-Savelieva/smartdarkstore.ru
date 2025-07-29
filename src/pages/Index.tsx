@@ -14,68 +14,6 @@ const Index = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("=== FORM SUBMIT START ===");
-    e.preventDefault();
-    e.stopPropagation();
-    console.log("Form submit handler called! preventDefault() executed");
-    
-    // Дополнительная проверка на mailto
-    if (window.location.href.includes('mailto:')) {
-      console.error("DETECTED MAILTO IN URL - BLOCKING");
-      return false;
-    }
-    
-    setIsSubmitting(true);
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      company: formData.get('company') || 'Не указана',
-      position: formData.get('position') || 'Не указана',
-      message: formData.get('message') || 'Не указано'
-    };
-    
-    console.log("Sending data via Supabase:", data);
-    
-    fetch('https://mlmxbnjftdifeyjanyrz.supabase.co/functions/v1/dynamic-task', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-    .then(response => {
-      console.log("Supabase response status:", response.status);
-      if (response.ok) {
-        toast({
-          title: "Заявка отправлена!",
-          description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
-        });
-        form.reset();
-      } else {
-        throw new Error('Ошибка отправки');
-      }
-    })
-    .catch(error => {
-      console.error("Supabase error:", error);
-      toast({
-        title: "Ошибка отправки",
-        description: "Попробуйте еще раз или свяжитесь с нами по телефону.",
-        variant: "destructive",
-      });
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-      console.log("=== FORM SUBMIT END ===");
-    });
-    
-    return false;
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -382,7 +320,6 @@ const Index = () => {
             
             <form 
               className="space-y-4 md:space-y-6" 
-              onSubmit={handleSubmit}
               action="javascript:void(0)"
               method="post" 
               data-form="contact-v3"
