@@ -14,6 +14,56 @@ const Index = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    setIsSubmitting(true);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string || 'Не указана',
+      position: formData.get('position') as string || 'Не указана',
+      message: formData.get('message') as string || 'Не указано'
+    };
+    
+    try {
+      const response = await fetch('https://mlmxbnjftdifeyjanyrz.supabase.co/functions/v1/dynamic-task', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: "Спасибо! Ваша заявка отправлена.",
+          description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.error || 'Ошибка отправки');
+      }
+    } catch (error: any) {
+      console.error('Ошибка отправки формы:', error);
+      toast({
+        title: "Ошибка отправки",
+        description: "Попробуйте еще раз или свяжитесь с нами по телефону.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -320,7 +370,7 @@ const Index = () => {
             
             <form 
               className="space-y-4 md:space-y-6" 
-              action="javascript:void(0)"
+              onSubmit={handleSubmit}
               method="post" 
               data-form="contact-v3"
               data-no-mailto="true"
