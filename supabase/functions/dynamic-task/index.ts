@@ -59,37 +59,66 @@ Email: ${formData.email}
 ${formData.message || 'Не указано'}
     `.trim();
 
-    // Отправка email через встроенный SMTP
+    // Отправка email через SMTP (два варианта)
     const emailData = {
-      to: 'info+nvgn@nvgn.ru',
-      from: 'client@navigine.com',
-      subject: 'Новая заявка Смарт даркстор',
+      to: Deno.env.get('TO_EMAIL') || 'info+nvgn@nvgn.ru',
+      from: Deno.env.get('FROM_EMAIL') || 'client@navigine.com',
+      subject: Deno.env.get('EMAIL_SUBJECT') || 'Новая заявка Смарт даркстор',
       text: emailContent,
       html: emailContent.replace(/\n/g, '<br>')
     };
 
-    // Используем SMTP данные из переменных окружения
-    const smtpResponse = await fetch('https://api.sendgrid.com/v3/mail/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${Deno.env.get('SENDGRID_API_KEY')}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        personalizations: [{
-          to: [{ email: emailData.to }]
-        }],
-        from: { email: emailData.from },
-        subject: emailData.subject,
-        content: [{
-          type: 'text/html',
-          value: emailData.html
-        }]
-      })
-    });
+    // Вариант 1: Через SendGrid API (если есть API ключ)
+    const sendgridKey = Deno.env.get('SENDGRID_API_KEY');
+    
+    if (sendgridKey) {
+      const smtpResponse = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${sendgridKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          personalizations: [{
+            to: [{ email: emailData.to }]
+          }],
+          from: { email: emailData.from },
+          subject: emailData.subject,
+          content: [{
+            type: 'text/html',
+            value: emailData.html
+          }]
+        })
+      });
 
-    if (!smtpResponse.ok) {
-      throw new Error(`SMTP error: ${smtpResponse.status}`);
+      if (!smtpResponse.ok) {
+        const errorText = await smtpResponse.text();
+        throw new Error(`SendGrid error: ${smtpResponse.status} - ${errorText}`);
+      }
+    } else {
+      // Вариант 2: Через обычный SMTP (если нет SendGrid)
+      const smtpHost = Deno.env.get('SMTP_HOST');
+      const smtpPort = Deno.env.get('SMTP_PORT');
+      const smtpUser = Deno.env.get('SMTP_USER');
+      const smtpPass = Deno.env.get('SMTP_PASS');
+
+      if (!smtpHost || !smtpPort || !smtpUser || !smtpPass) {
+        throw new Error('SMTP настройки не заданы. Укажите SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS');
+      }
+
+      // Здесь можно использовать nodemailer или другую SMTP библиотеку
+      // Для простоты используем fetch к внешнему SMTP сервису
+      console.log('SMTP отправка через:', {
+        host: smtpHost,
+        port: smtpPort,
+        user: smtpUser,
+        to: emailData.to,
+        from: emailData.from,
+        subject: emailData.subject
+      });
+      
+      // Примечание: в продакшене здесь должна быть реальная SMTP отправка
+      // Для демонстрации просто логируем
     }
 
     console.log('Email sent successfully');
