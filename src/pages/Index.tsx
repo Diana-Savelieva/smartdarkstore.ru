@@ -371,7 +371,6 @@ const Index = () => {
             <form 
               className="space-y-4 md:space-y-6" 
               onSubmit={handleSubmit}
-              method="post" 
               data-form="contact-v3"
               data-no-mailto="true"
             >
