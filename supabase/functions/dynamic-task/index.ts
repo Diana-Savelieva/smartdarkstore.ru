@@ -96,7 +96,7 @@ ${formData.message || 'Не указано'}
         throw new Error(`SendGrid error: ${smtpResponse.status} - ${errorText}`);
       }
     } else {
-      // Вариант 2: Через обычный SMTP (если нет SendGrid)
+      // Вариант 2: Через обычный SMTP
       const smtpHost = Deno.env.get('SMTP_HOST');
       const smtpPort = Deno.env.get('SMTP_PORT');
       const smtpUser = Deno.env.get('SMTP_USER');
@@ -106,19 +106,52 @@ ${formData.message || 'Не указано'}
         throw new Error('SMTP настройки не заданы. Укажите SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS');
       }
 
-      // Здесь можно использовать nodemailer или другую SMTP библиотеку
-      // Для простоты используем fetch к внешнему SMTP сервису
-      console.log('SMTP отправка через:', {
-        host: smtpHost,
-        port: smtpPort,
-        user: smtpUser,
-        to: emailData.to,
-        from: emailData.from,
-        subject: emailData.subject
+      // Создаем SMTP соединение через сырые TCP сокеты
+      const conn = await Deno.connect({
+        hostname: smtpHost,
+        port: parseInt(smtpPort)
       });
-      
-      // Примечание: в продакшене здесь должна быть реальная SMTP отправка
-      // Для демонстрации просто логируем
+
+      const encoder = new TextEncoder();
+      const decoder = new TextDecoder();
+
+      async function writeAndRead(command: string): Promise<string> {
+        await conn.write(encoder.encode(command + '\r\n'));
+        const buffer = new Uint8Array(1024);
+        const n = await conn.read(buffer);
+        return decoder.decode(buffer.subarray(0, n || 0));
+      }
+
+      try {
+        // SMTP протокол
+        await writeAndRead(''); // Ждем приветствие
+        await writeAndRead(`EHLO ${smtpHost}`);
+        await writeAndRead('AUTH LOGIN');
+        await writeAndRead(btoa(smtpUser));
+        await writeAndRead(btoa(smtpPass));
+        await writeAndRead(`MAIL FROM:<${emailData.from}>`);
+        await writeAndRead(`RCPT TO:<${emailData.to}>`);
+        await writeAndRead('DATA');
+        
+        const emailMessage = [
+          `From: ${emailData.from}`,
+          `To: ${emailData.to}`,
+          `Subject: ${emailData.subject}`,
+          'Content-Type: text/html; charset=utf-8',
+          '',
+          emailData.html,
+          '.'
+        ].join('\r\n');
+        
+        await writeAndRead(emailMessage);
+        await writeAndRead('QUIT');
+        
+        conn.close();
+        
+      } catch (smtpError) {
+        conn.close();
+        throw new Error(`SMTP отправка не удалась: ${smtpError.message}`);
+      }
     }
 
     console.log('Email sent successfully');
