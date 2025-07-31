@@ -62,7 +62,7 @@ ${formData.message || 'Не указано'}
 
     // Отправка email через SMTP
     const emailData = {
-      to: Deno.env.get('TO_EMAIL') || 'info+nvgn@nvgn.ru',
+      to: Deno.env.get('TO_EMAIL') || 'info@navigine.com',
       from: Deno.env.get('FROM_EMAIL') || 'client@navigine.com',
       subject: Deno.env.get('EMAIL_SUBJECT') || 'Новая заявка Смарт даркстор',
       text: emailContent,
