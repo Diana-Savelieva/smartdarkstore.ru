@@ -33,7 +33,7 @@ const Index = () => {
     };
     
     try {
-      const response = await fetch('https://opndeyibipgymoedcvjh.supabase.co/functions/v1/clever-endpoint', {
+      const response = await fetch('https://opndeyibipgymoedcvjh.supabase.co/functions/v1/dynamic-task', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
