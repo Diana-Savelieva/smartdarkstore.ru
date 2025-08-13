@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const { toast } = useToast();
@@ -33,25 +34,19 @@ const Index = () => {
     };
     
     try {
-      const response = await fetch('https://opndeyibipgymoedcvjh.supabase.co/functions/v1/clever-endpoint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+      const { data: result, error } = await supabase.functions.invoke('clever-endpoint', {
+        body: data,
       });
       
-      const result = await response.json();
-      
-      if (response.ok) {
-        toast({
-          title: "Спасибо! Ваша заявка отправлена.",
-          description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
-        });
-        form.reset();
-      } else {
-        throw new Error(result.error || 'Ошибка отправки');
+      if (error) {
+        throw new Error(error.message || 'Ошибка отправки');
       }
+      
+      toast({
+        title: "Спасибо! Ваша заявка отправлена.",
+        description: "Мы получили вашу заявку и свяжемся с вами в ближайшее время.",
+      });
+      form.reset();
     } catch (error: any) {
       console.error('Ошибка отправки формы:', error);
       toast({
