@@ -191,54 +191,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Dashboard Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      {/* Platform Functionality Section */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 md:mb-6">Панель управления</h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">Полный контроль над вашей торговой точкой</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 md:mb-6">Функционал платформы</h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="space-y-6 order-2 lg:order-1">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-4 md:p-6 mb-6 shadow-xl">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 text-center">Даркстор</h3>
-                <p className="text-white/90 text-center font-medium">Возможности системы</p>
-              </div>
-              
-              <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-blue-100">
-                <div className="space-y-3">
-                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
-                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Статистика эффективности решения</span>
-                  </div>
-                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
-                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Аналитика сканирований продуктов</span>
-                  </div>
-                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
-                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Перемещенные/мульти-расположенные товары</span>
-                  </div>
-                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
-                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Рекомендации по перемещению уровней полок</span>
-                  </div>
-                  <div className="flex items-start gap-4 group hover:bg-blue-50 p-2 rounded-lg transition-all duration-200">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-1.5 group-hover:scale-110 transition-transform shadow-md"></div>
-                    <span className="text-gray-700 leading-relaxed group-hover:text-blue-800 transition-colors text-sm md:text-base">Рекомендации по перестановке стеллажей</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative flex justify-center order-1 lg:order-2">
+          <div className="space-y-16 md:space-y-20">
+            {/* First Block - Heat Map (Image Left, Text Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
                 <img 
-                  src="/lovable-uploads/5c0f60c4-46a5-4289-9040-1d8b5073d753.png" 
-                  alt="Карта расположения товаров" 
-                  className="relative w-full max-w-md lg:max-w-lg h-auto rounded-2xl shadow-2xl border border-blue-200"
+                  src="/lovable-uploads/19e56cc6-5f1a-4d03-bb94-ce89562099d6.png" 
+                  alt="Тепловая карта стеллажей" 
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                />
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Тепловая карта стеллажей</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Инструмент визуализации данных о товарных зонах и стеллажах внутри даркстора. Цель — быстрое понимание распределения популярности товаров и эффективности расположения ассортимента.
+                </p>
+              </div>
+            </div>
+
+            {/* Second Block - Shelf Recommendations (Text Left, Image Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="space-y-6 order-2 lg:order-1">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Рекомендации по перестановке стеллажей</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Инструмент для оптимизации даркстора на основе анализа популярности товаров. Цель — показать, как изменить расположение стеллажей, чтобы ускорить сборку заказов и повысить эффективность работы сборщиков.
+                </p>
+              </div>
+              <div className="relative order-1 lg:order-2">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <img 
+                  src="/lovable-uploads/51b85827-96ab-438f-a0ad-7f4451812b36.png" 
+                  alt="Рекомендации по перестановке стеллажей" 
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                />
+              </div>
+            </div>
+
+            {/* Third Block - Rack Optimization (Image Left, Text Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <img 
+                  src="/lovable-uploads/5a8d1503-65e8-427d-976e-d5a6800daba4.png" 
+                  alt="Рекомендации по перестановке полок в стеллаже" 
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                />
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Рекомендации по перестановке полок в стеллаже</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Инструмент для оптимизации внутреннего устройства стеллажа. Цель — переместить полки с наиболее популярными товарами на эргономичный уровень, например, с нижнего уровня на средний, чтобы повысить доступ и увеличить скорость сборки.
+                </p>
+              </div>
+            </div>
+
+            {/* Fourth Block - Efficiency Analysis (Text Left, Image Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="space-y-6 order-2 lg:order-1">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Эффективность оптимизации маршрутов и выкладки</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Инструмент для анализа результативности решений по оптимизации работы даркстора. Цель — показать количество сборочных листов с оптимизированными маршрутами.
+                </p>
+              </div>
+              <div className="relative order-1 lg:order-2">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <img 
+                  src="/lovable-uploads/ebb91bd1-6032-4611-97a7-8676a230e690.png" 
+                  alt="Эффективность оптимизации маршрутов и выкладки" 
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
                 />
               </div>
             </div>
