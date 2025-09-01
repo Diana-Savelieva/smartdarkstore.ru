@@ -198,9 +198,9 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 md:mb-6">Функционал платформы</h2>
           </div>
           
-          <div className="space-y-16 md:space-y-20">
+          <div className="space-y-12 md:space-y-16">
             {/* First Block - Heat Map (Image Left, Text Right) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
                 <img 
@@ -209,8 +209,8 @@ const Index = () => {
                   className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
                 />
               </div>
-              <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Тепловая карта стеллажей</h3>
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-medium text-gray-900">Тепловая карта стеллажей</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Инструмент визуализации данных о товарных зонах и стеллажах внутри даркстора. Цель — быстрое понимание распределения популярности товаров и эффективности расположения ассортимента.
                 </p>
@@ -218,9 +218,9 @@ const Index = () => {
             </div>
 
             {/* Second Block - Shelf Recommendations (Text Left, Image Right) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="space-y-6 order-2 lg:order-1">
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Рекомендации по перестановке стеллажей</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
+              <div className="space-y-4 order-2 lg:order-1">
+                <h3 className="text-xl md:text-2xl font-medium text-gray-900">Рекомендации по перестановке стеллажей</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Инструмент для оптимизации даркстора на основе анализа популярности товаров. Цель — показать, как изменить расположение стеллажей, чтобы ускорить сборку заказов и повысить эффективность работы сборщиков.
                 </p>
@@ -236,7 +236,7 @@ const Index = () => {
             </div>
 
             {/* Third Block - Rack Optimization (Image Left, Text Right) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
                 <img 
@@ -245,8 +245,8 @@ const Index = () => {
                   className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
                 />
               </div>
-              <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Рекомендации по перестановке полок в стеллаже</h3>
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-medium text-gray-900">Рекомендации по перестановке полок в стеллаже</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Инструмент для оптимизации внутреннего устройства стеллажа. Цель — переместить полки с наиболее популярными товарами на эргономичный уровень, например, с нижнего уровня на средний, чтобы повысить доступ и увеличить скорость сборки.
                 </p>
@@ -254,9 +254,9 @@ const Index = () => {
             </div>
 
             {/* Fourth Block - Efficiency Analysis (Text Left, Image Right) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="space-y-6 order-2 lg:order-1">
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Эффективность оптимизации маршрутов и выкладки</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
+              <div className="space-y-4 order-2 lg:order-1">
+                <h3 className="text-xl md:text-2xl font-medium text-gray-900">Эффективность оптимизации маршрутов и выкладки</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Инструмент для анализа результативности решений по оптимизации работы даркстора. Цель — показать количество сборочных листов с оптимизированными маршрутами.
                 </p>
