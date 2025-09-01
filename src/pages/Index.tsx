@@ -202,11 +202,11 @@ const Index = () => {
             {/* First Block - Heat Map (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/19e56cc6-5f1a-4d03-bb94-ce89562099d6.png" 
                   alt="Тепловая карта стеллажей" 
-                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                  className="relative w-full h-auto shadow-2xl border border-blue-200"
                 />
               </div>
               <div className="space-y-4">
@@ -226,11 +226,11 @@ const Index = () => {
                 </p>
               </div>
               <div className="relative order-1 lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/51b85827-96ab-438f-a0ad-7f4451812b36.png" 
                   alt="Рекомендации по перестановке стеллажей" 
-                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                  className="relative w-full h-auto shadow-2xl border border-blue-200"
                 />
               </div>
             </div>
@@ -238,11 +238,11 @@ const Index = () => {
             {/* Third Block - Rack Optimization (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/5a8d1503-65e8-427d-976e-d5a6800daba4.png" 
                   alt="Рекомендации по перестановке полок в стеллаже" 
-                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                  className="relative w-full h-auto shadow-2xl border border-blue-200"
                 />
               </div>
               <div className="space-y-4">
@@ -262,11 +262,11 @@ const Index = () => {
                 </p>
               </div>
               <div className="relative order-1 lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/ebb91bd1-6032-4611-97a7-8676a230e690.png" 
                   alt="Эффективность оптимизации маршрутов и выкладки" 
-                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-blue-200"
+                  className="relative w-full h-auto shadow-2xl border border-blue-200"
                 />
               </div>
             </div>
