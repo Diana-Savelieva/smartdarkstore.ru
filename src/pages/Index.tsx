@@ -205,7 +205,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/heat-map-no-bg.png" 
+                  src="/lovable-uploads/39f6c574-c37a-4480-81a0-f7dffa586ff2.png" 
                   alt="Тепловая карта стеллажей" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -228,7 +228,7 @@ const Index = () => {
               </div>
               <div className="relative order-1 lg:order-2">
                 <img 
-                  src="/lovable-uploads/shelf-recommendations-no-bg.png" 
+                  src="/lovable-uploads/51b85827-96ab-438f-a0ad-7f4451812b36.png" 
                   alt="Рекомендации по перестановке стеллажей" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -239,7 +239,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/rack-optimization-no-bg.png" 
+                  src="/lovable-uploads/5a8d1503-65e8-427d-976e-d5a6800daba4.png" 
                   alt="Рекомендации по перестановке полок в стеллаже" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -262,7 +262,7 @@ const Index = () => {
               </div>
               <div className="relative order-1 lg:order-2">
                 <img 
-                  src="/lovable-uploads/efficiency-analysis-no-bg.png" 
+                  src="/lovable-uploads/ebb91bd1-6032-4611-97a7-8676a230e690.png" 
                   alt="Эффективность оптимизации маршрутов и выкладки" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -273,7 +273,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/analytics-relocated-no-bg.png" 
+                  src="/lovable-uploads/7306dcba-ce5e-424c-995e-b7faceb94c01.png" 
                   alt="Аналитика по перемещенным товарам" 
                   className="w-full h-auto shadow-2xl"
                 />
