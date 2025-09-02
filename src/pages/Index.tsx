@@ -202,11 +202,10 @@ const Index = () => {
             {/* First Block - Heat Map (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
-                  src="/lovable-uploads/19e56cc6-5f1a-4d03-bb94-ce89562099d6.png" 
+                  src="/lovable-uploads/39f6c574-c37a-4480-81a0-f7dffa586ff2.png" 
                   alt="Тепловая карта стеллажей" 
-                  className="relative w-full h-auto shadow-2xl border border-blue-200"
+                  className="w-full h-auto shadow-2xl"
                 />
               </div>
               <div className="space-y-4">
@@ -226,11 +225,10 @@ const Index = () => {
                 </p>
               </div>
               <div className="relative order-1 lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/51b85827-96ab-438f-a0ad-7f4451812b36.png" 
                   alt="Рекомендации по перестановке стеллажей" 
-                  className="relative w-full h-auto shadow-2xl border border-blue-200"
+                  className="w-full h-auto shadow-2xl"
                 />
               </div>
             </div>
@@ -238,11 +236,10 @@ const Index = () => {
             {/* Third Block - Rack Optimization (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/5a8d1503-65e8-427d-976e-d5a6800daba4.png" 
                   alt="Рекомендации по перестановке полок в стеллаже" 
-                  className="relative w-full h-auto shadow-2xl border border-blue-200"
+                  className="w-full h-auto shadow-2xl"
                 />
               </div>
               <div className="space-y-4">
@@ -262,12 +259,28 @@ const Index = () => {
                 </p>
               </div>
               <div className="relative order-1 lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 blur-xl"></div>
                 <img 
                   src="/lovable-uploads/ebb91bd1-6032-4611-97a7-8676a230e690.png" 
                   alt="Эффективность оптимизации маршрутов и выкладки" 
-                  className="relative w-full h-auto shadow-2xl border border-blue-200"
+                  className="w-full h-auto shadow-2xl"
                 />
+              </div>
+            </div>
+
+            {/* Fifth Block - Analytics for Relocated Products (Image Left, Text Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/7306dcba-ce5e-424c-995e-b7faceb94c01.png" 
+                  alt="Аналитика по перемещенным товарам" 
+                  className="w-full h-auto shadow-2xl"
+                />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-medium text-gray-900">Аналитика по перемещенным товарам</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Инструмент оценки эффективности изменений в планограмме даркстора. Цель — показать, как перемещение товаров повлияло на сокращение маршрута сборщиков заказов.
+                </p>
               </div>
             </div>
           </div>
