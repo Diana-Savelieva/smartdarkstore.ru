@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BackgroundRemovalProcessor } from "@/components/BackgroundRemovalProcessor";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
@@ -63,7 +62,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <BackgroundRemovalProcessor />
       {/* Hero Section */}
       <section className="relative py-6 md:py-8 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
