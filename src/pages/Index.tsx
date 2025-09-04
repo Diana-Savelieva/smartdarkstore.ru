@@ -201,13 +201,13 @@ const Index = () => {
           <div className="space-y-12 md:space-y-16">
             {/* First Block - Heat Map (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
-                <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-black">
-                  <img 
-                    src="/lovable-uploads/heat-map-rounded.png" 
-                    alt="Тепловая карта стеллажей" 
-                    className="w-full h-auto block"
-                  />
-                </div>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/heat-map-rounded.png" 
+                  alt="Тепловая карта стеллажей" 
+                  className="w-full h-auto shadow-2xl rounded-lg"
+                />
+              </div>
               <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl font-medium text-gray-900">Тепловая карта стеллажей</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -224,24 +224,24 @@ const Index = () => {
                   Инструмент для оптимизации даркстора на основе анализа популярности товаров. Цель — показать, как изменить расположение стеллажей, чтобы ускорить сборку заказов и повысить эффективность работы сборщиков.
                 </p>
               </div>
-                <div className="relative order-1 lg:order-2 rounded-lg overflow-hidden shadow-2xl border-4 border-black">
-                  <img 
-                    src="/lovable-uploads/shelf-recommendations-rounded.png" 
-                    alt="Рекомендации по перестановке стеллажей" 
-                    className="w-full h-auto block"
-                  />
-                </div>
+              <div className="relative order-1 lg:order-2">
+                <img 
+                  src="/lovable-uploads/shelf-recommendations-rounded.png" 
+                  alt="Рекомендации по перестановке стеллажей" 
+                  className="w-full h-auto shadow-2xl rounded-lg"
+                />
+              </div>
             </div>
 
             {/* Third Block - Rack Optimization (Image Left, Text Right) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
-                <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-black">
-                  <img 
-                    src="/lovable-uploads/rack-optimization-rounded.png" 
-                    alt="Рекомендации по перестановке полок в стеллаже" 
-                    className="w-full h-auto block"
-                  />
-                </div>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/rack-optimization-rounded.png" 
+                  alt="Рекомендации по перестановке полок в стеллаже" 
+                  className="w-full h-auto shadow-2xl rounded-lg"
+                />
+              </div>
               <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl font-medium text-gray-900">Рекомендации по перестановке полок в стеллаже</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
