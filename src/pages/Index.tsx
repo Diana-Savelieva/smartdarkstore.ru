@@ -205,7 +205,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/heat-map-rounded.png" 
                   alt="Тепловая карта стеллажей" 
-                  className="w-full h-auto shadow-2xl rounded-lg"
+                  className="w-full h-auto shadow-2xl rounded-lg border-2 border-black"
                 />
               </div>
               <div className="space-y-4">
@@ -228,7 +228,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/shelf-recommendations-rounded.png" 
                   alt="Рекомендации по перестановке стеллажей" 
-                  className="w-full h-auto shadow-2xl rounded-lg"
+                  className="w-full h-auto shadow-2xl rounded-lg border-2 border-black"
                 />
               </div>
             </div>
@@ -239,7 +239,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/rack-optimization-rounded.png" 
                   alt="Рекомендации по перестановке полок в стеллаже" 
-                  className="w-full h-auto shadow-2xl rounded-lg"
+                  className="w-full h-auto shadow-2xl rounded-lg border-2 border-black"
                 />
               </div>
               <div className="space-y-4">
