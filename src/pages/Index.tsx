@@ -203,7 +203,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/1cb62708-cb9c-4a34-bc33-d0db3c1da65f.png" 
+                  src="/lovable-uploads/heat-map-rounded.png" 
                   alt="Тепловая карта стеллажей" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -226,7 +226,7 @@ const Index = () => {
               </div>
               <div className="relative order-1 lg:order-2">
                 <img 
-                  src="/lovable-uploads/5c7ade1a-6260-4c7a-9f57-e16c98a9baa5.png" 
+                  src="/lovable-uploads/shelf-recommendations-rounded.png" 
                   alt="Рекомендации по перестановке стеллажей" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -237,7 +237,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/da63c38d-a79f-4db8-9a22-d5f5b4ca3772.png" 
+                  src="/lovable-uploads/rack-optimization-rounded.png" 
                   alt="Рекомендации по перестановке полок в стеллаже" 
                   className="w-full h-auto shadow-2xl"
                 />
@@ -262,7 +262,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/609549b4-6eb5-4192-8aeb-1854479706a4.png" 
                   alt="Эффективность оптимизации маршрутов и выкладки" 
-                  className="w-full h-auto shadow-2xl"
+                  className="w-full h-auto shadow-2xl rounded-lg"
                 />
               </div>
             </div>
@@ -273,7 +273,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/7d1d0fb4-b62d-438e-871a-ab411e539987.png" 
                   alt="Аналитика по перемещенным товарам" 
-                  className="w-full h-auto shadow-2xl"
+                  className="w-full h-auto shadow-2xl rounded-lg"
                 />
               </div>
               <div className="space-y-4">
