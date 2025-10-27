@@ -153,9 +153,16 @@ const Index = () => {
             
             {/* CTA Button */}
             <Button 
+              asChild
               className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
             >
-              Назначить видеозвонок
+              <a 
+                href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Назначить видеозвонок
+              </a>
             </Button>
           </div>
           
