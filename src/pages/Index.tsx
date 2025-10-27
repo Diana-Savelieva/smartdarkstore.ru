@@ -3,9 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, Phone, Mail } from "lucide-react";
+import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, ChevronDown, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Index = () => {
   const { toast } = useToast();
@@ -65,25 +73,90 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-6 md:py-8 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Logo and Contact Info positioned together */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-6">
-            <div className="flex items-center mb-4 sm:mb-0">
+          {/* Logo, Navigation and CTA */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 md:mb-6 gap-4">
+            <div className="flex items-center">
               <img 
                 src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
                 alt="СМАРТ ДАРКСТОР" 
                 className="h-12 md:h-16 w-auto"
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">+7 (495) 255-3978</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                <Mail className="w-4 h-4" />
-                <span className="text-sm font-medium">sasha@smartdarkstore.ru</span>
-              </div>
-            </div>
+            
+            {/* Navigation Menu */}
+            <NavigationMenu className="hidden lg:block">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent">
+                    Отрасли
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[200px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a
+                            href="#"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium">Ритейл</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a
+                            href="#"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium">Логистика и склад</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <a
+                      href="#"
+                      className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-accent transition-colors focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      FAQ
+                    </a>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <a
+                      href="#"
+                      className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-accent transition-colors focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      Новости
+                    </a>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <a
+                      href="#"
+                      className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-accent transition-colors focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      Контакты
+                    </a>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
+            {/* CTA Button */}
+            <Button 
+              className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient"
+            >
+              Назначить видеозвонок
+            </Button>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
