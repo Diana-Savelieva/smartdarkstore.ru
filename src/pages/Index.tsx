@@ -74,7 +74,7 @@ const Index = () => {
       <section className="relative py-6 md:py-8 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           {/* Logo, Navigation and CTA */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 md:mb-6 gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center mb-4 md:mb-6 gap-4 lg:gap-8">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
@@ -153,7 +153,7 @@ const Index = () => {
             
             {/* CTA Button */}
             <Button 
-              className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient"
+              className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
             >
               Назначить видеозвонок
             </Button>
