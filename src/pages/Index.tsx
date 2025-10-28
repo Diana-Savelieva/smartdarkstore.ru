@@ -141,12 +141,12 @@ const Index = () => {
                 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contacts"
                       className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-accent transition-colors focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                     >
                       Контакты
-                    </a>
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>

@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,8 +15,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import alexandraImage from "@/assets/alexandra-buvasheva.png";
 
-const FAQ = () => {
+const Contacts = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -69,71 +65,12 @@ const FAQ = () => {
     }
   };
 
-  const faqData = [
-    {
-      question: "Что такое Смарт даркстор?",
-      answer: "Смарт даркстор — это инновационное решение для оптимизации процессов сборки и комплектации заказов на складах и торговых точках. Система сокращает маршруты сборщиков, ускоряет обработку заказов и минимизирует ошибки."
-    },
-    {
-      question: "Какие ключевые задачи решает Смарт даркстор?",
-      answer: "Среди ключевых задач, которые решает Смарт даркстор — длинные, неоптимизированные маршруты сборщиков, неравномерная нагрузка на сотрудников, высокая доля ошибок при сборке заказов, недостаток аналитики внутренних процессов."
-    },
-    {
-      question: "Как происходит интеграция с существующими IT-системами?",
-      answer: "Интеграция основана на взаимодействии через API, без изменения программной логики систем клиента. Смарт даркстор взаимодействует с системами WMS, ERP и другими, передавая данные по стандартным протоколам, что обеспечивает простоту и безопасность внедрения."
-    },
-    {
-      question: "Как рассчитывается стоимость внедрения?",
-      answer: "Цена формируется индивидуально и зависит от масштаба и задач бизнеса. Модель оплаты включает разовый платеж за внедрение и ежемесячную подписку за поддержку и использование системы."
-    },
-    {
-      question: "В каких сферах применимо решение?",
-      answer: "Решение подходит для ритейла, розничной торговли, логистических центров и складов с контролируемым температурным режимом (хранение продуктов, FMCG). Идеально для бизнеса, требующего высокой точности и скорости комплектации."
-    },
-    {
-      question: "Нужно ли специальное оборудование для работы с системой?",
-      answer: "Оборудование не требуется. Система функционирует на базе существующей IT-инфраструктуры клиента и может использовать имеющуюся систему видеонаблюдения для видеоаналитики."
-    },
-    {
-      question: "Как долго длится внедрение решения?",
-      answer: "Средний срок внедрения решения составляет 4 недели."
-    },
-    {
-      question: "Какие выгоды получает бизнес от внедрения Смарт даркстор?",
-      answer: "Сокращение времени комплектации заказов на 15–25%, уменьшение длины маршрутов сборщиков до 70%, снижение ошибок при сборке заказов до 99%, равномерное распределение нагрузки на сотрудников и повышение прозрачности процессов."
-    },
-    {
-      question: "Предусмотрены ли решения для работы с товарами, требующими специального температурного режима?",
-      answer: "Да, система учитывает температурные режимы, вес, габариты товаров и другие параметры, оптимизируя сборочные листы."
-    },
-    {
-      question: "Как Смарт даркстор помогает снизить операционные расходы?",
-      answer: "Повышение операционной эффективности происходит за счет автоматизации процессов, сокращения маршрутов сборщиков, рекомендаций по перемещению стеллажей, полок, отдельных товаров и равномерного распределения нагрузки между сотрудниками."
-    },
-    {
-      question: "Какие отчёты и аналитические данные доступны пользователям?",
-      answer: "Доступны тепловая карта даркстора, рекомендации по перестановке стеллажей, полок и отдельных товаров, аналитика по перемещенным товарам и отчет по эффективности решения."
-    },
-    {
-      question: "Нужны дополнительные функции",
-      answer: "Если вашему бизнесу требуются уникальные дополнительные функции, мы готовы разработать и интегрировать их в систему. Свяжитесь с нами для обсуждения индивидуальных потребностей по электронной почте sasha@smartdarkstore.ru."
-    },
-    {
-      question: "Как получить поддержку в случае необходимости?",
-      answer: "Мы предоставляем услуги технической поддержки на всех этапах работы с нашей системой — во время внедрения, интеграции, а также в процессе эксплуатации. Если вам нужна помощь, обратитесь к нам по адресу sasha@smartdarkstore.ru, и наша команда оперативно решит ваши вопросы."
-    },
-    {
-      question: "Что делать, если я сомневаюсь, подойдет ли данное решение для моего бизнеса?",
-      answer: "Вы можете связаться с нашей командой через sasha@smartdarkstore.ru, описать бизнес-задачи, получить консультацию, демонстрацию системы и оценку проекта."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <section className="relative py-6 md:py-8 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-center mb-4 md:mb-6 gap-4 lg:gap-8">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/2fbd3ffc-2c98-4dc7-b80a-963941993cce.png" 
@@ -142,7 +79,6 @@ const FAQ = () => {
               />
             </Link>
             
-            {/* Navigation Menu */}
             <NavigationMenu className="hidden lg:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -210,7 +146,6 @@ const FAQ = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
-            {/* CTA Button */}
             <Button 
               asChild
               className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
@@ -227,39 +162,64 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* FAQ Content Section */}
+      {/* Contact Information Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
-              Часто задаваемые вопросы
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Ответы на популярные вопросы о системе Смарт даркстор
-            </p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Контакты</h1>
+            <p className="text-lg md:text-xl text-gray-600">Свяжитесь с нами удобным для вас способом</p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqData.map((item, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="bg-white rounded-lg shadow-md border-0 overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline hover:bg-blue-50 transition-colors">
-                    <span className="text-lg font-medium text-gray-900 pr-4">
-                      {item.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 pt-2">
-                    <p className="text-gray-700 leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Contact Details Card */}
+            <div className="backdrop-blur-sm bg-white/70 rounded-2xl p-8 shadow-xl border border-white/20">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Наши контакты</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Адрес</h3>
+                    <p className="text-gray-600">Большой бульвар, 42 стр. 1, 121205 Москва</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Телефон</h3>
+                    <a href="tel:+74952553978" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      +7 (495) 255-39-78
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                    <a href="mailto:sasha@smartdarkstore.ru" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      sasha@smartdarkstore.ru
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Person Card */}
+            <div className="backdrop-blur-sm bg-white/70 rounded-2xl p-8 shadow-xl border border-white/20 flex flex-col items-center justify-center text-center">
+              <Avatar className="w-32 h-32 mb-6 ring-4 ring-blue-500/20">
+                <AvatarImage src={alexandraImage} alt="Александра Бувашева" />
+                <AvatarFallback>АБ</AvatarFallback>
+              </Avatar>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-2">Александра Бувашева</h3>
+              <p className="text-lg text-gray-600">Директор по продукту</p>
+            </div>
           </div>
         </div>
       </section>
@@ -386,4 +346,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Contacts;
