@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Clock, Route, Users, Video, Zap, BarChart3, Package, Check, TrendingUp, Smartphone, ChevronDown, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Link } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -118,12 +119,12 @@ const Index = () => {
                 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <a
-                      href="#"
+                    <Link
+                      to="/faq"
                       className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-accent transition-colors focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                     >
                       FAQ
-                    </a>
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
