@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import alexandraImage from "@/assets/alexandra-buvasheva.png";
+import alexandraImage from "@/assets/alexandra-buvasheva-new.png";
 
 const Contacts = () => {
   const { toast } = useToast();
@@ -205,6 +205,18 @@ const Contacts = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <a href="mailto:sasha@smartdarkstore.ru" className="text-gray-600 hover:text-blue-600 transition-colors">
                       sasha@smartdarkstore.ru
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Send className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Telegram</h3>
+                    <a href="https://t.me/le_alexa" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      @le_alexa
                     </a>
                   </div>
                 </div>
