@@ -15,7 +15,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import alexandraImage from "@/assets/alexandra-buvasheva-new.png";
+import alexandraImage from "@/assets/alexandra-buvasheva-photo.png";
 
 const Contacts = () => {
   const { toast } = useToast();
@@ -225,7 +225,7 @@ const Contacts = () => {
 
             {/* Contact Person Card */}
             <div className="backdrop-blur-sm bg-white/70 rounded-2xl p-8 shadow-xl border border-white/20 flex flex-col items-center justify-center text-center">
-              <Avatar className="w-32 h-32 mb-6 ring-4 ring-blue-500/20">
+              <Avatar className="w-48 h-48 mb-6 ring-4 ring-blue-500/20">
                 <AvatarImage src={alexandraImage} alt="Александра Бувашева" />
                 <AvatarFallback>АБ</AvatarFallback>
               </Avatar>
