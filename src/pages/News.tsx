@@ -170,7 +170,7 @@ const News = () => {
                 </div>
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                    Смарт даркстор
+                    Смарт даркстор — решение для ритейла и логистики
                   </h2>
                   <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
                     Система сокращает маршруты сборки, балансирует нагрузку между сотрудниками, обеспечивает точный прогноз времени выполнения заказов и предлагает AI-помощника для эффективной работы...
