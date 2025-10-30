@@ -9,9 +9,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import articleImage from "@/assets/article-smart-darkstore.png";
 import articleDiagram from "@/assets/article-diagram.png";
@@ -89,27 +91,67 @@ const Article1 = () => {
             <NavigationMenu className="hidden lg:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link to="/" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Главная
-                  </Link>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent text-base px-5 py-2.5">
+                    Отрасли
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[200px] bg-white">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Ритейл</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Логистика и склад</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Новости
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      FAQ
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    FAQ
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Новости
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Контакты
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Контакты
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            
+            <Button 
+              asChild
+              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
+            >
+              <a 
+                href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Назначить видеозвонок
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -117,23 +159,29 @@ const Article1 = () => {
       {/* Article Header */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <img 
-              src={articleImage} 
-              alt="Смарт даркстор" 
-              className="w-full rounded-2xl shadow-2xl mb-8"
-            />
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Смарт даркстор
-            </h1>
-            <div className="flex flex-wrap gap-6 text-gray-600 mb-8">
-              <div className="flex items-center gap-2">
-                <UserIcon className="w-5 h-5" />
-                <span>Диана Савельева</span>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                  Смарт даркстор
+                </h1>
+                <div className="flex flex-wrap gap-6 text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <UserIcon className="w-5 h-5" />
+                    <span>Диана Савельева</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>29.10.2025</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>29.10.2025</span>
+              <div>
+                <img 
+                  src={articleImage} 
+                  alt="Смарт даркстор" 
+                  className="w-full rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
           </div>
@@ -175,10 +223,22 @@ const Article1 = () => {
               <div id="section-2" className="mb-12 scroll-mt-20">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Основные проблемы, с которыми сталкивается ритейл при сборке и аналитике заказов</h2>
                 <ul className="space-y-4 text-gray-700">
-                  <li><strong>Неоптимизированные маршруты сборки:</strong> сборщики тратят время, перемещаясь по длинным и неэффективным маршрутам, что замедляет процесс сборки заказов и снижает общую производительность.</li>
-                  <li><strong>Неравномерное распределение нагрузки:</strong> перегрузка сборщиков приводит к задержкам и ошибкам, что снижает общую эффективность работы.</li>
-                  <li><strong>Низкая точность прогноза времени сборки заказов:</strong> клиенты остаются без четкой информации о времени готовности заказа, что снижает уровень сервиса.</li>
-                  <li><strong>Фрагментарная и непрозрачная аналитика:</strong> традиционные системы видеоконтроля и учета не позволяют оперативно реагировать на изменения в складе или дарксторе, что приводит к потерям и сбоям.</li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Неоптимизированные маршруты сборки:</strong> сборщики тратят время, перемещаясь по длинным и неэффективным маршрутам, что замедляет процесс сборки заказов и снижает общую производительность.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Неравномерное распределение нагрузки:</strong> перегрузка сборщиков приводит к задержкам и ошибкам, что снижает общую эффективность работы.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Низкая точность прогноза времени сборки заказов:</strong> клиенты остаются без четкой информации о времени готовности заказа, что снижает уровень сервиса.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Фрагментарная и непрозрачная аналитика:</strong> традиционные системы видеоконтроля и учета не позволяют оперативно реагировать на изменения в складе или дарксторе, что приводит к потерям и сбоям.</span>
+                  </li>
                 </ul>
               </div>
 
@@ -188,19 +248,42 @@ const Article1 = () => {
                   Наше решение позволяет автоматизировать сборочные процессы, повысить эффективность и оптимизировать работу торговой точки с помощью интеллектуальной системы управления.
                 </p>
                 <ul className="space-y-4 text-gray-700 mb-8">
-                  <li><strong>Подбор самых оптимальных маршрутов:</strong> наша система учитывает более 10 параметров — массу, объем товаров, функциональные зоны (морозильники, химия и другие), подбирает самый короткий и эффективный путь для каждого заказа. Чем больше позиций — тем больше выгода от алгоритма.</li>
-                  <li><strong>AI-помощник менеджера:</strong> помогает пользователям быстро находить нужную информацию о перемещении стеллажей или уровней полок, отвечать на частые вопросы и сопровождать их на каждом этапе взаимодействия.</li>
-                  <li><strong>Персональные маршруты для сотрудников:</strong> система анализирует опыт и стиль работы каждого сборщика, формируя индивидуальные рекомендации. Новички и опытные сотрудники получат разные оптимальные маршруты.</li>
-                  <li><strong>Навигация для сборки:</strong> маршрут отображается прямо на терминалах сбора заказов, благодаря чему даже новые сотрудники быстро ориентируются и работают без ошибок.</li>
-                  <li><strong>Рекомендации по перестановке:</strong> учитывается популярность товаров, товарное соседство и другие параметры. На основе аналитики популярности (тепловой карты) система рекомендует перестановку полок и стеллажей, ускоряя процесс комплектации заказов и снижая нагрузку на персонал.</li>
-                  <li><strong>Прогнозирование времени выполнения:</strong> благодаря точным расчетам заказчики получают четкую и реальную информацию о сроках готовности заказов.</li>
-                  <li><strong>Параллельная сборка заказов:</strong> возможность одновременной обработки нескольких заказов, что помогает справиться с заказами в пиковые часы без перегрузки.</li>
-                  <li><strong>Полная интеграция с IT-системами ритейлеров:</strong> гибкая API-интеграция и поддержка различных устройств обеспечивают простоту внедрения и надежность работы системы.</li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Подбор самых оптимальных маршрутов:</strong> наша система учитывает более 10 параметров — массу, объем товаров, функциональные зоны (морозильники, химия и другие), подбирает самый короткий и эффективный путь для каждого заказа. Чем больше позиций — тем больше выгода от алгоритма.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>AI-помощник менеджера:</strong> помогает пользователям быстро находить нужную информацию о перемещении стеллажей или уровней полок, отвечать на частые вопросы и сопровождать их на каждом этапе взаимодействия.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Персональные маршруты для сотрудников:</strong> система анализирует опыт и стиль работы каждого сборщика, формируя индивидуальные рекомендации. Новички и опытные сотрудники получат разные оптимальные маршруты.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Навигация для сборки:</strong> маршрут отображается прямо на терминалах сбора заказов, благодаря чему даже новые сотрудники быстро ориентируются и работают без ошибок.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Рекомендации по перестановке:</strong> учитывается популярность товаров, товарное соседство и другие параметры. На основе аналитики популярности (тепловой карты) система рекомендует перестановку полок и стеллажей, ускоряя процесс комплектации заказов и снижая нагрузку на персонал.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Прогнозирование времени выполнения:</strong> благодаря точным расчетам заказчики получают четкую и реальную информацию о сроках готовности заказов.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Параллельная сборка заказов:</strong> возможность одновременной обработки нескольких заказов, что помогает справиться с заказами в пиковые часы без перегрузки.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span><strong>Полная интеграция с IT-системами ритейлеров:</strong> гибкая API-интеграция и поддержка различных устройств обеспечивают простоту внедрения и надежность работы системы.</span>
+                  </li>
                 </ul>
               </div>
 
               <div id="section-4" className="mb-12 scroll-mt-20">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Преимущества для бизнеса</h2>
                 <div className="mb-8">
                   <img 
                     src={articleDiagram} 
@@ -208,11 +291,24 @@ const Article1 = () => {
                     className="w-full rounded-2xl shadow-lg"
                   />
                 </div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Преимущества для бизнеса</h2>
                 <ul className="space-y-3 text-gray-700 mb-8">
-                  <li>Сокращение времени сборки заказов на 15-25%, а маршрутов сборщиков — до 70%.</li>
-                  <li>Минимизация ошибок и повышение точности сборки — до 99%.</li>
-                  <li>Оптимальное распределение нагрузки между сотрудниками.</li>
-                  <li>Комплексная аналитика и рекомендации для улучшения работы торговой точки.</li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span>Сокращение времени сборки заказов на 15-25%, а маршрутов сборщиков — до 70%.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span>Минимизация ошибок и повышение точности сборки — до 99%.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span>Оптимальное распределение нагрузки между сотрудниками.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span>Комплексная аналитика и рекомендации для улучшения работы торговой точки.</span>
+                  </li>
                 </ul>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Смарт даркстор — это не просто система управления заказами, а комплексный инструмент, который трансформирует работу торговых точек, дарксторов и складов. Решая главные проблемы ритейла: от неоптимальных маршрутов и перегрузки персонала до непрозрачной аналитики и низкой точности прогноза, наше решение позволяет повысить производительность и снизить количество ошибок. Персональные рекомендации, интеграция с существующими IT-системами и AI-ассистент менеджера делают этот продукт незаменимым помощником для современного ритейла. Внедряйте инновации и становитесь лидером рынка вместе с «Навигационными решениями»!

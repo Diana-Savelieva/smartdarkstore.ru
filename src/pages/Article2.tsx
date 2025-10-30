@@ -9,9 +9,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import articleImage from "@/assets/article-vkusvill.png";
 import dianaPhoto from "@/assets/diana.png";
@@ -90,27 +92,67 @@ const Article2 = () => {
             <NavigationMenu className="hidden lg:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link to="/" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Главная
-                  </Link>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent text-base px-5 py-2.5">
+                    Отрасли
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[200px] bg-white">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Ритейл</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Логистика и склад</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Новости
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      FAQ
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    FAQ
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Новости
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
+                
                 <NavigationMenuItem>
-                  <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Контакты
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Контакты
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            
+            <Button 
+              asChild
+              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
+            >
+              <a 
+                href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Назначить видеозвонок
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -118,23 +160,29 @@ const Article2 = () => {
       {/* Article Header */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <img 
-              src={articleImage} 
-              alt="Успешное внедрение решения Смарт даркстор для ВкусВилла" 
-              className="w-full rounded-2xl shadow-2xl mb-8"
-            />
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Успешное внедрение решения Смарт даркстор для ВкусВилла
-            </h1>
-            <div className="flex flex-wrap gap-6 text-gray-600 mb-8">
-              <div className="flex items-center gap-2">
-                <UserIcon className="w-5 h-5" />
-                <span>Диана Савельева</span>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                  Успешное внедрение решения Смарт даркстор для ВкусВилла
+                </h1>
+                <div className="flex flex-wrap gap-6 text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <UserIcon className="w-5 h-5" />
+                    <span>Диана Савельева</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>01.11.2025</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>01.11.2025</span>
+              <div>
+                <img 
+                  src={articleImage} 
+                  alt="Успешное внедрение решения Смарт даркстор для ВкусВилла" 
+                  className="w-full rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
           </div>
@@ -176,30 +224,54 @@ const Article2 = () => {
               <div id="section-2" className="mb-12 scroll-mt-20">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Ключевые преимущества проекта:</h2>
                 <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Сокращение маршрутов сборки заказов</strong> достигается за счёт минимизации перемещений сборщиков по торговой точке. Это становится возможным благодаря оптимизации сборочных листов и практическим рекомендациям по перестановке стеллажей, полок и отдельных товаров. В результате существенно ускоряется процесс сборки, увеличивается количество выполненных заказов за меньшее время, а нагрузка на сотрудников дарксторов снижается.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Рекомендации по перестановке стеллажей, полок и отдельных товаров</strong> основаны на анализе данных о количестве сканирований. Это позволяет перемещать стеллажи с наибольшим количеством сканирований ближе к кассам, а товары размещать на эргономичных уровнях, что обеспечивает улучшенный доступ и увеличивает скорость сборочного процесса.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Тепловая карта</strong> визуализирует популярность товаров, отображая количество сканирований за определённый период времени. Такой подход помогает выявить наиболее востребованные позиции и формировать обоснованные рекомендации по их размещению.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Учет характеристик и особенностей товаров</strong> используются для построения маршрутов с учетом ~10 параметров — зона хранения, габариты, вес, хрупкость, тип продукта и другие. Такая детальная адаптация позволяет формировать оптимальные цепочки сборки, где, например, тяжелые и громоздкие товары размещаются в конце маршрута. Это снижает нагрузку на сборщиков.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Порядок обхода зон</strong> строго регламентируется системой, которая задаёт оптимальную последовательность прохождения по зонам и стеллажам — холодильным камерам, пекарне, бытовой химии и другим.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Отчёты по эффективности</strong> предоставляют детальный анализ, сравнивая оптимизированные и неоптимизированные заказы, а также выявляя причины неоптимального выполнения — будь то неопределённые стеллажи или слишком короткие сборочные листы.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Использование камер для мониторинга</strong> обеспечивает автоматическое детектирование перемещения стеллажей без необходимости дополнительного оборудования, что упрощает интеграцию и сокращает операционные затраты.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>Круглосуточная техническая поддержка</strong> гарантирует стабильную работу решения и оперативную помощь пользователям в любое время суток, обеспечивая непрерывность бизнес-процессов.
-                  </p>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Сокращение маршрутов сборки заказов</strong> достигается за счёт минимизации перемещений сборщиков по торговой точке. Это становится возможным благодаря оптимизации сборочных листов и практическим рекомендациям по перестановке стеллажей, полок и отдельных товаров. В результате существенно ускоряется процесс сборки, увеличивается количество выполненных заказов за меньшее время, а нагрузка на сотрудников дарксторов снижается.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Рекомендации по перестановке стеллажей, полок и отдельных товаров</strong> основаны на анализе данных о количестве сканирований. Это позволяет перемещать стеллажи с наибольшим количеством сканирований ближе к кассам, а товары размещать на эргономичных уровнях, что обеспечивает улучшенный доступ и увеличивает скорость сборочного процесса.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Тепловая карта</strong> визуализирует популярность товаров, отображая количество сканирований за определённый период времени. Такой подход помогает выявить наиболее востребованные позиции и формировать обоснованные рекомендации по их размещению.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Учет характеристик и особенностей товаров</strong> используются для построения маршрутов с учетом ~10 параметров — зона хранения, габариты, вес, хрупкость, тип продукта и другие. Такая детальная адаптация позволяет формировать оптимальные цепочки сборки, где, например, тяжелые и громоздкие товары размещаются в конце маршрута. Это снижает нагрузку на сборщиков.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Порядок обхода зон</strong> строго регламентируется системой, которая задаёт оптимальную последовательность прохождения по зонам и стеллажам — холодильным камерам, пекарне, бытовой химии и другим.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Отчёты по эффективности</strong> предоставляют детальный анализ, сравнивая оптимизированные и неоптимизированные заказы, а также выявляя причины неоптимального выполнения — будь то неопределённые стеллажи или слишком короткие сборочные листы.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Использование камер для мониторинга</strong> обеспечивает автоматическое детектирование перемещения стеллажей без необходимости дополнительного оборудования, что упрощает интеграцию и сокращает операционные затраты.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Круглосуточная техническая поддержка</strong> гарантирует стабильную работу решения и оперативную помощь пользователям в любое время суток, обеспечивая непрерывность бизнес-процессов.
+                    </p>
+                  </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed mt-6">
                   Внедрение «Смарт даркстор» уже показало значительные результаты и потенциал для масштабирования, который позволяет повысить точность, скорость и качество выполнения заказов АО «ВкусВилл».

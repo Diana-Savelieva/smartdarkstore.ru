@@ -92,7 +92,7 @@ const Index = () => {
                     Отрасли
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid gap-2 p-4 w-[200px]">
+                    <ul className="grid gap-2 p-4 w-[200px] bg-white">
                       <li>
                         <NavigationMenuLink asChild>
                           <a

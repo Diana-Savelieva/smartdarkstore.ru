@@ -86,12 +86,18 @@ const News = () => {
                     Отрасли
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid gap-2 p-4 w-[200px]">
+                    <ul className="grid gap-2 p-4 w-[200px] bg-white">
                       <li>
                         <NavigationMenuLink asChild>
                           <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none mb-1">Ритейл</div>
-                            <p className="text-sm leading-snug text-muted-foreground line-clamp-2">Решения для розничной торговли</p>
+                            <div className="text-sm font-medium">Ритейл</div>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Логистика и склад</div>
                           </a>
                         </NavigationMenuLink>
                       </li>
@@ -100,42 +106,43 @@ const News = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent text-base px-5 py-2.5">
-                    Продукт
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-2 p-4 w-[200px]">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none mb-1">Возможности</div>
-                            <p className="text-sm leading-snug text-muted-foreground line-clamp-2">Узнайте о функциях продукта</p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink asChild>
+                    <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      FAQ
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Новости
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Новости
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    FAQ
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
-                    Контакты
-                  </Link>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Контакты
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            
+            <Button 
+              asChild
+              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
+            >
+              <a 
+                href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Назначить видеозвонок
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -153,19 +160,19 @@ const News = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
             {/* Article 1 */}
             <Link to="/news/smart-darkstore" className="group">
-              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden">
                   <img 
                     src={articleSmartDarkstore} 
                     alt="Смарт даркстор" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                     Смарт даркстор
                   </h2>
-                  <p className="text-gray-600 mb-6 line-clamp-3">
+                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
                     Система сокращает маршруты сборки, балансирует нагрузку между сотрудниками, обеспечивает точный прогноз времени выполнения заказов и предлагает AI-помощника для эффективной работы...
                   </p>
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
@@ -177,19 +184,19 @@ const News = () => {
 
             {/* Article 2 */}
             <Link to="/news/vkusvill" className="group">
-              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden">
                   <img 
                     src={articleVkusvill} 
                     alt="Успешное внедрение решения Смарт даркстор для ВкусВилла" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                     Успешное внедрение решения Смарт даркстор для ВкусВилла
                   </h2>
-                  <p className="text-gray-600 mb-6 line-clamp-3">
+                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
                     Компания ООО «Платформа управления», входящая в ГК «Навигационные решения», с радостью объявляет о реализации системы Смарт даркстор для АО «ВкусВилл»...
                   </p>
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
