@@ -157,49 +157,69 @@ const News = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-            {/* Article 1 */}
+          <div className="space-y-8 max-w-6xl mx-auto">
+            {/* Article 1 - Horizontal Layout */}
             <Link to="/news/smart-darkstore" className="group">
-              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] h-full flex flex-col">
-                <div className="aspect-video w-full overflow-hidden">
+              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] flex flex-col md:flex-row">
+                <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
                   <img 
                     src={articleSmartDarkstore} 
                     alt="Смарт даркстор" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                    Смарт даркстор — решение для ритейла и логистики
-                  </h2>
-                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                    Система сокращает маршруты сборки, балансирует нагрузку между сотрудниками, обеспечивает точный прогноз времени выполнения заказов и предлагает AI-помощника для эффективной работы...
-                  </p>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+                <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">
+                        Новости
+                      </span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                      Смарт даркстор — решение для ритейла и логистики
+                    </h2>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      Система сокращает маршруты сборки, балансирует нагрузку между сотрудниками, обеспечивает точный прогноз времени выполнения заказов и предлагает AI-помощника для эффективной работы...
+                    </p>
+                    <p className="text-sm text-gray-500 mb-4">
+                      Автор: Диана Савельева • 29.10.2025
+                    </p>
+                  </div>
+                  <Button className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                     Читать
                   </Button>
                 </div>
               </div>
             </Link>
 
-            {/* Article 2 */}
+            {/* Article 2 - Horizontal Layout */}
             <Link to="/news/vkusvill" className="group">
-              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] h-full flex flex-col">
-                <div className="aspect-video w-full overflow-hidden">
+              <div className="backdrop-blur-sm bg-white/90 rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] flex flex-col md:flex-row">
+                <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
                   <img 
                     src={articleVkusvill} 
                     alt="Успешное внедрение решения Смарт даркстор для ВкусВилла" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                    Успешное внедрение решения Смарт даркстор для ВкусВилла
-                  </h2>
-                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                    Компания ООО «Платформа управления», входящая в ГК «Навигационные решения», с радостью объявляет о реализации системы Смарт даркстор для АО «ВкусВилл»...
-                  </p>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+                <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">
+                        Пресс-релиз
+                      </span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                      Успешное внедрение решения Смарт даркстор для ВкусВилла
+                    </h2>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      Компания ООО «Платформа управления», входящая в ГК «Навигационные решения», с радостью объявляет о реализации системы Смарт даркстор для АО «ВкусВилл»...
+                    </p>
+                    <p className="text-sm text-gray-500 mb-4">
+                      Автор: Диана Савельева • 01.11.2025
+                    </p>
+                  </div>
+                  <Button className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                     Читать
                   </Button>
                 </div>
