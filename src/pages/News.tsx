@@ -14,6 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { MobileMenu } from "@/components/MobileMenu";
 import articleSmartDarkstore from "@/assets/article-smart-darkstore.png";
 import articleVkusvill from "@/assets/article-vkusvill.png";
 
@@ -89,16 +90,16 @@ const News = () => {
                     <ul className="grid gap-2 p-4 w-[200px] bg-white">
                       <li>
                         <NavigationMenuLink asChild>
-                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/retail" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium">Ритейл</div>
-                          </a>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/logistics" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium">Логистика и склад</div>
-                          </a>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                     </ul>
@@ -131,9 +132,11 @@ const News = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
+            <MobileMenu />
+            
             <Button 
               asChild
-              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
+              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto text-sm md:text-base px-4 md:px-6"
             >
               <a 
                 href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 

@@ -15,6 +15,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { MobileMenu } from "@/components/MobileMenu";
 import articleImage from "@/assets/article-smart-darkstore.png";
 import articleDiagram from "@/assets/article-diagram.png";
 import dianaPhoto from "@/assets/diana.png";
@@ -98,16 +99,16 @@ const Article1 = () => {
                     <ul className="grid gap-2 p-4 w-[200px] bg-white">
                       <li>
                         <NavigationMenuLink asChild>
-                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/retail" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium">Ритейл</div>
-                          </a>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <a href="#" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/logistics" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium">Логистика и склад</div>
-                          </a>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                     </ul>
@@ -140,9 +141,11 @@ const Article1 = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
+            <MobileMenu />
+            
             <Button 
               asChild
-              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto"
+              className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white border-0 shadow-lg transition-all duration-500 animate-gradient lg:ml-auto text-sm md:text-base px-4 md:px-6"
             >
               <a 
                 href="https://planerka.app/aleksandra-buvasheva-17mrhw/30-minutnyy-zvonok-s-menedzherom-smart-darkstor" 
@@ -162,6 +165,9 @@ const Article1 = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div>
+                <span className="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full mb-4">
+                  Новости
+                </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   Смарт даркстор — решение для ритейла и логистики
                 </h1>
@@ -224,19 +230,19 @@ const Article1 = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Основные проблемы, с которыми сталкивается ритейл при сборке и аналитике заказов</h2>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Неоптимизированные маршруты сборки:</strong> сборщики тратят время, перемещаясь по длинным и неэффективным маршрутам, что замедляет процесс сборки заказов и снижает общую производительность.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Неравномерное распределение нагрузки:</strong> перегрузка сборщиков приводит к задержкам и ошибкам, что снижает общую эффективность работы.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Низкая точность прогноза времени сборки заказов:</strong> клиенты остаются без четкой информации о времени готовности заказа, что снижает уровень сервиса.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Фрагментарная и непрозрачная аналитика:</strong> традиционные системы видеоконтроля и учета не позволяют оперативно реагировать на изменения в складе или дарксторе, что приводит к потерям и сбоям.</span>
                   </li>
                 </ul>
@@ -249,35 +255,35 @@ const Article1 = () => {
                 </p>
                 <ul className="space-y-4 text-gray-700 mb-8">
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Подбор самых оптимальных маршрутов:</strong> наша система учитывает более 10 параметров — массу, объем товаров, функциональные зоны (морозильники, химия и другие), подбирает самый короткий и эффективный путь для каждого заказа. Чем больше позиций — тем больше выгода от алгоритма.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>AI-помощник менеджера:</strong> помогает пользователям быстро находить нужную информацию о перемещении стеллажей или уровней полок, отвечать на частые вопросы и сопровождать их на каждом этапе взаимодействия.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Персональные маршруты для сотрудников:</strong> система анализирует опыт и стиль работы каждого сборщика, формируя индивидуальные рекомендации. Новички и опытные сотрудники получат разные оптимальные маршруты.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Навигация для сборки:</strong> маршрут отображается прямо на терминалах сбора заказов, благодаря чему даже новые сотрудники быстро ориентируются и работают без ошибок.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Рекомендации по перестановке:</strong> учитывается популярность товаров, товарное соседство и другие параметры. На основе аналитики популярности (тепловой карты) система рекомендует перестановку полок и стеллажей, ускоряя процесс комплектации заказов и снижая нагрузку на персонал.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Прогнозирование времени выполнения:</strong> благодаря точным расчетам заказчики получают четкую и реальную информацию о сроках готовности заказов.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Параллельная сборка заказов:</strong> возможность одновременной обработки нескольких заказов, что помогает справиться с заказами в пиковые часы без перегрузки.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span><strong>Полная интеграция с IT-системами ритейлеров:</strong> гибкая API-интеграция и поддержка различных устройств обеспечивают простоту внедрения и надежность работы системы.</span>
                   </li>
                 </ul>
@@ -294,19 +300,19 @@ const Article1 = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 uppercase">Преимущества для бизнеса</h2>
                 <ul className="space-y-3 text-gray-700 mb-8">
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span>Сокращение времени сборки заказов на 15-25%, а маршрутов сборщиков — до 70%.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span>Минимизация ошибок и повышение точности сборки — до 99%.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span>Оптимальное распределение нагрузки между сотрудниками.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
+                    <span className="w-4 h-4 rounded-full border-2 border-blue-500 flex-shrink-0 mt-0.5"></span>
                     <span>Комплексная аналитика и рекомендации для улучшения работы торговой точки.</span>
                   </li>
                 </ul>

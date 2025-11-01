@@ -20,6 +20,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const FAQ = () => {
   const { toast } = useToast();
@@ -169,6 +170,58 @@ const FAQ = () => {
             
             {/* Navigation Menu */}
             <NavigationMenu className="hidden lg:block">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent text-base px-5 py-2.5">
+                    Отрасли
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[200px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/retail" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Ритейл</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/logistics" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium">Логистика и склад</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/faq" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      FAQ
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/news" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Новости
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contacts" className="inline-flex items-center justify-center rounded-md text-base font-medium text-gray-700 hover:text-blue-600 bg-transparent px-5 py-2.5 transition-colors">
+                      Контакты
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
+            <MobileMenu />
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 bg-transparent text-base px-5 py-2.5">
